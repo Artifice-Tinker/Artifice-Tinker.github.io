@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<head>
+<script src="main.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Jim+Nightshade&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Jim+Nightshade&display=swap" rel="stylesheet"> 
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+	<div id="forest_witch" class="content story" style="display:block;">
+		<div class ="audio-player" id="player">
+			<audio class="audio" id="audio_fw" ontimeupdate="
+			document.getElementById(&quot;forest-witch-progress&quot;).value=Math.floor(currentTime/duration*100);
+			document.getElementById(&quot;fw-current&quot;).innerHTML=calcTime(currentTime);
+			"
+			>
+				<source src="The_forest_witch.m4a" type=" audio/x-m4a" 
+				>	
+			</audio>
+			<div class="container" style="width:6%;">
+				<svg class="contained" style="display:block; height:45px; width:100%;margin:0">
+					<path 
+					id="play" 
+					style="opacity:0.7; fill:#f9f6f6; stroke:#555555; stroke-width:2; stroke-linejoin:round; stroke-linecap:round;"
+					onmouseover="style.opacity=1;"
+					onmouseout="style.opacity=.7;"
+					onclick="
+						document.getElementById(&quot;pause&quot;).style.display=&quot;block&quot;;
+						style.display=&quot;none&quot;;
+						const audio=document.getElementById(&quot;audio_fw&quot;);
+						audio.play()
+
+						"
+					d="M 5,5 L 5,40 L 35.31,22.5 L5,5"
+					/>
+					
+					<g id="pause" style="display:none;" 
+					onmouseover="style.opacity=1;"
+					onmouseout="style.opacity=.7;"
+					onclick="document.getElementById(&quot;play&quot;).style.display=&quot;block&quot;;
+					style.display=&quot;none&quot;;
+					document.getElementById(&quot;audio_fw&quot;).pause();
+					"
+					>
+						<rect
+						style="fill:#f9f6f6; stroke:#555555; stroke-width:2; stroke-linejoin:round; stroke-linecap:round;"
+						x="7"
+						y="5"
+						width="10"
+						height="35"
+						/>
+						<rect
+						style=" fill:#f9f6f6; stroke:#555555; stroke-width:2; stroke-linejoin:round; stroke-linecap:round;"
+						x="20"
+						y="5"
+						width="10"
+						height="35"
+						/>
+					</g>
+	   
+	   
+				</svg>
+			</div>
+			<div class="container" style="width:55%;">
+				<input  class="contained progress" id="forest-witch-progress" type="range" max="100" value="0" 
+				onmouseover="style.opacity=1" onmouseout="style.opacity=.7" onchange="
+				const audio=document.getElementById(&quot;audio_fw&quot;);
+				audio.currentTime=value*audio.duration/100;
+				"
+				onmousedown="document.getElementById(&quot;audio_fw&quot;).pause();"
+				onmouseup="
+				const playing=(document.getElementById(&quot;play&quot;).style.display==&quot;none&quot;);
+				if(playing){document.getElementById(&quot;audio_fw&quot;).play();}
+				"
+				>
+			</div>
+			<div class="container volume" style="width:10%; float:right;" id="volume_container">
+				<input class="contained" type="range" max="7" value="7" style="width:80%;" onmouseover="style.opacity=1" onmouseout="style.opacity=.7"
+				onchange="
+				const audio=document.getElementsByClassName(&quot;audio&quot;);
+				for(var i=0; i<audio.length; i++){
+					audio[i].volume=value/max;
+				}
+				"
+				>
+			</div>
+			<div class="container" style="width:6%; float:right;">
+				<svg class="contained" style="display:block; height:45px; width:100%; margin:0">
+					<g id="mute_button" style="opacity:.7;" 
+					onmouseover="style.opacity=1;"
+					onmouseout="style.opacity=.7;"
+					onclick="
+						const mute=document.getElementsByClassName(&quot;muted&quot;);
+						if(mute[0].style.opacity==1){
+							for(var i=0;i<mute.length;i++){
+								mute[i].style.opacity=0;
+							}
+							const volume=document.getElementsByClassName(&quot;volume&quot;);
+							for(var i=0;i<volume.length;i++){
+								volume[i].style.opacity=1;
+							}
+							const audio=document.getElementsByClassName(&quot;audio&quot;);
+							for(var i=0;i<audio.length;i++){
+								audio[i].muted=false;
+							}
+						}else{
+							for(var i=0;i<mute.length;i++){
+								mute[i].style.opacity=1;
+							}
+							const volume=document.getElementsByClassName(&quot;volume&quot;);
+							for(var i=0;i<volume.length;i++){
+								volume[i].style.opacity=.5;
+							}
+							const audio=document.getElementsByClassName(&quot;audio&quot;);
+							for(var i=0;i<audio.length;i++){
+								audio[i].muted=true;
+							}
+						}
+					"
+					>
+						<g>
+							<rect 
+							style="fill:#f9f6f6; stroke:#555555; stroke-width:2; stroke-linejoin:round; stroke-linecap:round;"
+							x="5"
+							y="15"
+							width="10"
+							height="15" />
+						<path 
+							style="fill:#f9f6f6; stroke:#555555; stroke-width:2; stroke-linejoin:round; stroke-linecap:round;"
+							d="M 18,15 l 0,15 15,9 0,-33 -15,9 z"
+							/>
+						</g>
+						
+						<path class="muted"
+							style="fill:#f9f6f6; stroke:#555555; stroke-width:2; stroke-linejoin:round; stroke-linecap:round; opacity:0;"
+							d="M 4,13 l 5,-5 10,10 10,-10 5,5 -10,10 10,10 -5,5 -10,-10 -10,10 -5,-5 10,-10 -10,-10 z"
+						/>
+					</g>
+				</svg>
+			</div>
+			<div class="container"  style="width:20%; float:right;">
+				<div class="contained">
+					<span class="current" id="fw-current">0:00</span>
+					/
+					<span class="length" id="fw-length">3:45</span>
+				</div>
+			</div>
+			
+			
+			
+		</div>
+		
+		<p>Once upon a time, there was a kingdom. It was a wonderful kingdom, rich and beautiful. Everyone had warm houses and good food. They were protected by valiant knights and powerful wizards, and could live their lives to the fullest.
+		<br>
+		<p>The kingdom was so wonderful that all its people made a wish, that they could enjoy the goodness of the kingdom forever.
+		<br>
+		<p>And so seasons passed.
+		<br>
+		<p>In this kingdom there was a girl. A humble farmer’s daughter. Her parents died when she was little, but they still raised her the best they could; they so loved the kingdom. And their daughter too, of course.
+		<br>
+		<p>From them the girl learned to tend to the animals, and to tend to the crops, and to harness the oxen, and to harvest good food to eat. When she had gathered the harvest, she shared it with the rest of the town, and stored what she didn’t need in the shed at the end of the farm.
+		<br>
+		<p>“That way, we will always have something good to eat if the harvest is poor,” her parents told her.
+		<br>
+		<p>And so seasons passed.
+		<br>
+		<p>One spring, the girl noticed an odd smell emanating from the shed. She asked her parents what she should do about it.
+		<br>
+		<p>“An odd smell? I don’t remember anything like that happening before,” they said to each other. To their daughter the ghosts said, “We don’t smell anything. Don’t worry about it. You must be imagining things.”
+		<br>
+		<p>The girl trusted her parent’s guidance and put the smell out of her mind.
+		<br>
+		<p>As the girl had grown, the harvests became smaller and smaller; the soil less fertile, and the water less clean. But now, this year, many of her crops died of an unknown disease. She heard other farms across the kingdom had also suffered the same blight.
+		<br>
+		<p>The girl knew it would be a hard winter, but she knew that she had saved plenty the previous year.
+		<br>
+		<p>But when she went to check on her stores she found that they had been broken into by rats. Much was gone, but there would still have been almost enough, had what remained not spoiled. The girl asked the ghosts what she should do.
+		<br>
+		<p>“Where did we go wrong,” they said to each other, “We taught our daughter everything she needed to know. Now she tells us that she will not eat any of the good food we had her store. And she saved so little of it. She has been getting lazier and lazier every year, harvesting less and less. And now she is so spoiled as to say that she cannot eat the food from our own farm. Where did we go wrong?”
+		<br>
+		<p>To their daughter though they said, “Perhaps you can forage in the woods and fish in the pond. We’re sure you’ll find something.”
+		<br>
+		<p>And so the girl survived the year hunting and foraging in the woods. It was a harsh year, and a more dangerous one than she was used to, and she nearly died many times. but she persevered.
+		<br>
+		<p>She sought out the fae creatures living deep in the forest and begged them for help. They took pity on her and offered her guidance.
+		<br>
+		<p>By the start of the next spring, she had learned enough to survive in the wilderness. To provide for herself, and to help some from the village with herbs and roots. She decided that she would stay out there.
+		<br>
+		<p>Her parents haunted her though. Urging her to come back to the farm. To plant on the dying land. To keep their old ways alive which had seen the kingdom prosper.
+		<br>
+		<p>And so, the witch returned to her old farm. 
+		<br>
+		<p>And she would have burned it down herself had the dragon not gotten to it first.
+	</div>
+
+	<div class="header">
+		<div style="background-color: #f9f6f6;width:100%; position:relative; top:0;">
+			<h1 onmouseover="style.opacity=1;" onmouseout="style.opacity=.7" onclick="interactiveMap('witch');toggleMap();"style="margin:0; padding:2%;">
+			Artifice Tinkering
+			</h1>
+		</div>
+		<div id="map" class="map" style="display: none;">
+			<div  style="left:0; width:100%; height:100in; background-color:rgba(0,0,0,.5); position:absolute;" onclick="closeMap();"></div>
+			<object id="map_svg" data="Sitemap.svg" style="padding: 1%;padding-top:0;border-bottom-left-radius:2%;border-bottom-right-radius:2%;background-color: #f9f6f6;display:block;height:500%;  position:absolute;left:50%; transform:translate(-50%)">
+		</div>
+	</div>
+</body>
+
