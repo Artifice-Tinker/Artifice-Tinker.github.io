@@ -12,11 +12,12 @@ function interactiveMap(current_page){
 	for(var i=0;i<todo.length;i++){
 		map.getElementById(todo[i]).onmouseover="";
 		map.getElementById(todo[i]).onmouseout="";
-		map.getElementById(todo[i]).onclick=""
+		map.getElementById(todo[i]).onclick="";
+		map.getElementById(todo[i]).style.opacity=.4;
 	}
-	map.getElementById(current_page+"_pin").style.oppacity=1;
+	map.getElementById(current_page+"_pin").style.opacity=1;
 	map.getElementById(current_page+"_pin").onmouseover="";
 	map.getElementById(current_page+"_pin").onmouseout="";
 	map.getElementById(current_page+"_pin").onclick="";
-	map.getElementById(current_page+"_star").style.oppacity=1;
+	map.getElementById(current_page+"_star").style.opacity=1;
 }
