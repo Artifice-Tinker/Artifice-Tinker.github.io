@@ -6,6 +6,13 @@ function toggleMap(){
 function closeMap(){
 	document.getElementById("map").style.display="none";
 }
+const calcTime = (secs) => {
+  const minutes = Math.floor(secs / 60);
+  const seconds = Math.floor(secs % 60);
+  const returnedSeconds = seconds < 10 ? `0${seconds}` : `${seconds}`;
+  return `${minutes}:${returnedSeconds}`;
+}
+
 function interactiveMap(current_page){
 	const todo=["metaphysics_pin","farmer_pin","litch_pin","morality_pin","ethics_pin","support_pin"];
 	const map=document.getElementById("map_svg").contentDocument;
