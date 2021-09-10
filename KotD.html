@@ -8,38 +8,44 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Jim+Nightshade&display=swap" rel="stylesheet"> 
 
 <link rel="stylesheet" type="text/css" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-	<div id="intro" class="content" style="display:block">
-		<p>Our world is one of overwhelming complexity. Everything seems out of control, pushed around by titanic forces, indifferent at best and malicious at worst, playing games to their own inscrutable ends. 
-		<br>
-		<p>Catastrophes, local to regional to national to global, are mounting; expanding in frequency and destructive power. And the governing bodies and institutions which we might expect to be in control are blocked from action or asleep at the wheel, or paralyzed by gridlock, or even falling apart before our very eyes.
-		<br>
-		<p>These are problems of complexity; of systems adapted to their circumstances which fail when said circumstances change; of resources to be allocated in positive feedback loops and exponential growth which can only lead to larger collapse in the end; of interdependencies allowing cascading failures instead of isolated ones.
-		<br>
-		<p>But people generally aren't good at thinking about complex systems. In part because complexity science as a field is so new, and in part because we just aren't built for it. We're communal hairless apes for god's sake. We're made to sit around a campfire swapping stories, not considering if some societal intervention's long-term impacts are bad for a random endangered species in some forest we've never been to.
-		<br>
-		<p>But we are good at stories. 
-		<br>
-		<p>And stories are complex. Elements interleave and themes interact and characters live and breathe, all aligning to complex patterns of narrative and archetypal significance, and all of that is understood by us, intuitively. Because we're made to sit around a campfire swapping stories.
-		<br>
-		<br>
-		<hr>
-		<br>
-		<p>I have built a setting, with stories made to parallel the world as best I see it, written in the simple styles of fairy tales, so that the complex patterns they mirror can be understood as clearly as possible.
-		<br>
-		<p>I hope that you find them entertaining, and more so, I hope that you find them of some use.
-	</div>
-	
-	<div class="header">
-		<div style="background-color: #f9f6f6;width:100%; position:relative; top:0;">
+	<div class="header col-4">
+		<div style="background-color: #f9f6f6; position:relative; top:0;">
 			<h1 onmouseover="style.opacity=1;" onmouseout="style.opacity=.7" onclick="interactiveMap('KotD');toggleMap();"style="margin:0; padding:2%;">
 			Artifice Tinkering
 			</h1>
 		</div>
-		<div id="map" class="map" style="display: none;">
-			<div  style="left:0; width:100%; height:100in; background-color:rgba(0,0,0,.5); position:absolute;" onclick="closeMap();"></div>
-			<object id="map_svg" data="Sitemap.svg" style="padding: 1%;padding-top:0;border-bottom-left-radius:2%;border-bottom-right-radius:2%;background-color: #f9f6f6;display:block;height:500%;  position:absolute;left:50%; transform:translate(-50%)">
+		<div id="map" class="map" style="display: block;">
+			<div class="col-4" style="background-color:rgba(0,0,0,.5); position:absolute; height:100vh; padding-top:0;" onclick="closeMap();">	
+				<object id="map_svg" data="Sitemap.svg" onload="document.getElementById('map').style.display='none';" style="padding: 1%;padding-top:0;border-bottom-left-radius:2%;border-bottom-right-radius:2%;background-color: #f9f6f6;display:block;  position:absolute;left:50%; transform:translate(-50%); max-height:100%; max-width:100%;"></object>
+			</div>
 		</div>
 	</div>
+	<div class="row">
+		<div class="col-1 col-space"></div>
+		<div id="intro" class="content col-2" style="display:block">
+			<p>Our world is one of overwhelming complexity. Everything seems out of control, pushed around by titanic forces, indifferent at best and malicious at worst, playing games to their own inscrutable ends. 
+			<br>
+			<p>Catastrophes, local to regional to national to global, are mounting; expanding in frequency and destructive power. And the governing bodies and institutions which we might expect to be in control are blocked from action or asleep at the wheel, or paralyzed by gridlock, or even falling apart before our very eyes.
+			<br>
+			<p>These are problems of complexity; of systems adapted to their circumstances which fail when said circumstances change; of resources to be allocated in positive feedback loops and exponential growth which can only lead to larger collapse in the end; of interdependencies allowing cascading failures instead of isolated ones.
+			<br>
+			<p>But people generally aren't good at thinking about complex systems. In part because complexity science as a field is so new, and in part because we just aren't built for it. We're communal hairless apes for god's sake. We're made to sit around a campfire swapping stories, not considering if some societal intervention's long-term impacts are bad for a random endangered species in some forest we've never been to.
+			<br>
+			<p>But we are good at stories. 
+			<br>
+			<p>And stories are complex. Elements interleave and themes interact and characters live and breathe, all aligning to complex patterns of narrative and archetypal significance, and all of that is understood by us, intuitively. Because we're made to sit around a campfire swapping stories.
+			<br>
+			<br>
+			<hr>
+			<br>
+			<p>I have built a setting, with stories made to parallel the world as best I see it, written in the simple styles of fairy tales, so that the complex patterns they mirror can be understood as clearly as possible.
+			<br>
+			<p>I hope that you find them entertaining, and more so, I hope that you find them of some use.
+		</div>
+		<div class="col-1 col-space"></div>
+	</div>
+	
 </body>

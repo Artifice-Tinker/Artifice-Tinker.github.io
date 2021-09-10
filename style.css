@@ -1,7 +1,33 @@
 body{
 background-color: #f9f6f6;
-
+margin:0;
 }
+
+*{
+	box-sizing: border-box;
+}
+
+.col-1 {width: 25%;}
+.col-2 {width:50%;}
+.col-3 {width:75%;}
+.col-4 {width:100%;}
+[class*="col-"] {float: left;padding: 15px;}
+@media only screen and (max-width: 900px) {
+  /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
+  }
+  .col-1{width:50%;}
+  .col-space{width:0;padding:0;}
+}
+
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
 
 input[type=range] {
   height: 17px;
@@ -95,23 +121,20 @@ input[type=range]:focus::-ms-fill-upper {
 
 
 .header{
-position: fixed;
+padding:0;
+position: sticky;
 top:0;
 left:0;
-width:100%;
 z-index: 2
 }
 
 .audio-player{
 position: fixed;
 bottom: 0;
-left: 25%;
-width:50%;
 background-color:#f9f6f6;
 overflow:hidden;
 white-space:nowrap;
-padding-top:10px;
-padding-bottom:10px;
+width:100%;
 }
 .play-button{
 	float:left;
@@ -136,8 +159,7 @@ padding-bottom:10px;
 .contained{
 	margin-left: 10px;
 	margin-right:10px;
-	margin-top:auto;
-	margin-bottom:auto;
+	margin-top:12.5px;
 }
 
 h1{
@@ -154,14 +176,11 @@ background-color: #f9f6f6;
 
 
 .content{
-margin-left: 25%;
-margin-right: 25%;
-margin-top: 10%;
-margin-bottom:20%;
+margin-top: 0;
 font-family: 'IBM Plex Sans', sans-serif;
 word-spacing: 30%;
 text-align:left;
-font-size: 150%;
+font-size: 130%;
 color: #555555;
 }
 
@@ -178,7 +197,6 @@ display: block;
 blockquote{
 border-left-style: solid;
 border-color: grey;
-width: 40%;
 padding-left: 5px;
 float: left;
 margin-bottom: 10%;
