@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
-
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -41,11 +40,11 @@
      inkscape:window-maximized="0" />
   <style
      id="style5496">
+    @import url("https://fonts.googleapis.com/css2?family=Jim+Nightshade");
 	.star_pin {
 		opacity:0;
 		display:inline;
 	}
-        @import url("https://fonts.googleapis.com/css?family=Jim+Nightshade:400,400i,700,700i");
     
 	</style>
   <defs
