@@ -1,10 +1,10 @@
 function toggleMap(){
 	var style=document.getElementById("map").style;
-	if(style.display=="block") style.display="none";
-	else style.display="block";
+	if(style.visibility=="visible") style.visibility="collapse";
+	else style.visibility="visible";
 }
 function closeMap(){
-	document.getElementById("map").style.display="none";
+	document.getElementById("map").style.visibility="visible";
 }
 const calcTime = (secs) => {
   const minutes = Math.floor(secs / 60);

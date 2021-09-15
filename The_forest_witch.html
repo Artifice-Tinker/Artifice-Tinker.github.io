@@ -4,6 +4,48 @@
 <meta charset="utf-8">
 <head>
 <script src="main.js"></script>
+<script>
+
+
+function bg_image_percent(percentThrough){
+	function subpercent(total, min, max){
+		return (total-min)/(max-min);
+	}
+	const svg=document.getElementById("farm_svg").contentDocument;
+	if(percentThrough<.27){//normal image
+		svg.getElementById("layer4").style.opacity=0;
+		svg.getElementById("layer5").style.opacity=0;
+		svg.getElementById("layer6").style.opacity=0;
+	}
+	else if(.27<=percentThrough&&percentThrough<.45){//transition1
+		svg.getElementById("layer4").style.opacity=subpercent(percentThrough,.27,.45);
+		svg.getElementById("layer5").style.opacity=0;
+		svg.getElementById("layer6").style.opacity=0;
+	}
+	else if(.45<=percentThrough&&percentThrough<.71){//1
+		svg.getElementById("layer4").style.opacity=1;
+		svg.getElementById("layer5").style.opacity=0;
+		svg.getElementById("layer6").style.opacity=0;
+	}
+	else if(.71<=percentThrough&&percentThrough<.90){//1-2
+		const per = subpercent(percentThrough,.71,.90)*3/4;
+		svg.getElementById("layer4").style.opacity=1-per;
+		svg.getElementById("layer5").style.opacity=0;
+		svg.getElementById("layer6").style.opacity=per;
+	}
+	else if(.90<=percentThrough&&percentThrough<.98){//1&2
+		svg.getElementById("layer4").style.opacity=.25;
+		svg.getElementById("layer5").style.opacity=0;
+		svg.getElementById("layer6").style.opacity=.75;
+	}
+	else{//1&2&3
+		const per= subpercent(percentThrough,.98,1);
+		svg.getElementById("layer4").style.opacity=.25*per+.25;
+		svg.getElementById("layer5").style.opacity=per;
+		svg.getElementById("layer6").style.opacity=(1-per)/2+.25;
+	}
+}
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Jim+Nightshade&display=swap" rel="stylesheet"> 
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Jim+Nightshade&display=swap" rel="stylesheet"> 
 <link rel="stylesheet" type="text/css" href="style.css">
@@ -16,9 +58,9 @@
 			Artifice Tinkering
 			</h1>
 		</div>
-		<div id="map" class="map" style="display: block;">
+		<div id="map" class="map" style="visibility: hidden;">
 			<div class="col-4" style="background-color:rgba(0,0,0,.5); position:absolute; height:100vh; padding-top:0;" onclick="closeMap();">	
-				<object id="map_svg" data="Sitemap.svg" onload="document.getElementById('map').style.display='none';" style="padding: 1%;padding-top:0;border-bottom-left-radius:2%;border-bottom-right-radius:2%;background-color: #f9f6f6;display:block;  position:absolute;left:50%; transform:translate(-50%); max-height:100%; max-width:100%;"></object>
+				<object id="map_svg" data="Sitemap.svg" style="padding: 1%;padding-top:0;border-bottom-left-radius:2%;border-bottom-right-radius:2%;background-color: #f9f6f6;display:block;  position:absolute;left:50%; transform:translate(-50%); max-height:100%; max-width:100%;"></object>
 			</div>
 		</div>
 	</div>
@@ -28,6 +70,7 @@
 			<audio class="audio" id="audio_fw" ontimeupdate="
 			document.getElementById(&quot;forest-witch-progress&quot;).value=Math.floor(currentTime/duration*100);
 			document.getElementById(&quot;fw-current&quot;).innerHTML=calcTime(currentTime);
+			bg_image_percent(currentTime/duration);
 			"
 			>
 				<source src="The_forest_witch.m4a" type=" audio/x-m4a" 
