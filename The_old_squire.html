@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<head>
+<script src="main.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Jim+Nightshade&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Jim+Nightshade&display=swap" rel="stylesheet"> 
+<link rel="stylesheet" type="text/css" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<div class="header col-4">
+		<div style=" position:relative; top:0;">
+			<h1 onmouseover="style.opacity=1;" onmouseout="style.opacity=.7" onclick="interactiveMap('squire');toggleMap();"style="margin:0; padding:2%;">
+			Artifice Tinkering
+			</h1>
+		</div>
+		<div id="map" class="map" style="visibility: hidden;">
+			<div class="col-4" style="background-color:rgba(0,0,0,.5); position:fixed; height:100vh; padding-top:0;" onclick="closeMap();">	
+				<object id="map_svg" data="Sitemap.svg" style="padding: 1%;padding-top:0;border-bottom-left-radius:2%;border-bottom-right-radius:2%;background-color: #f9f6f6;display:block;  position:absolute;left:50%; transform:translate(-50%); max-height:100%; max-width:100%;"></object>
+			</div>
+		</div>
+	</div>
+	<div class="row audio-player">
+		<div class="col-1 col-space"></div>
+		<div id="player" class="col-2">
+			<audio class="audio" id="audio_os" ontimeupdate="
+			document.getElementById(&quot;old-squire-progress&quot;).value=Math.floor(currentTime/duration*100);
+			document.getElementById(&quot;os-current&quot;).innerHTML=calcTime(currentTime);
+			bg_image_percent(currentTime/duration);
+			"
+			>
+				<source src="The_old_squire.m4a" type=" audio/x-m4a" 
+				>	
+			</audio>
+			<div class="container" style="width:40px;">
+				<svg class="contained" style="display:block; height:45px; width:45px;margin:0">
+					<path 
+					id="play" 
+					style="opacity:0.7; fill:#f9f6f6; stroke:#555555; stroke-width:2; stroke-linejoin:round; stroke-linecap:round;"
+					onmouseover="style.opacity=1;"
+					onmouseout="style.opacity=.7;"
+					onclick="
+						document.getElementById(&quot;pause&quot;).style.display=&quot;block&quot;;
+						style.display=&quot;none&quot;;
+						const audio=document.getElementById(&quot;audio_os&quot;);
+						audio.play()
+
+						"
+					d="M 5,5 L 5,40 L 35.31,22.5 L5,5"
+					/>
+					
+					<g id="pause" style="display:none;" 
+					onmouseover="style.opacity=1;"
+					onmouseout="style.opacity=.7;"
+					onclick="document.getElementById(&quot;play&quot;).style.display=&quot;block&quot;;
+					style.display=&quot;none&quot;;
+					document.getElementById(&quot;audio_os&quot;).pause();
+					"
+					>
+						<rect
+						style="fill:#f9f6f6; stroke:#555555; stroke-width:2; stroke-linejoin:round; stroke-linecap:round;"
+						x="7"
+						y="5"
+						width="10"
+						height="35"
+						/>
+						<rect
+						style=" fill:#f9f6f6; stroke:#555555; stroke-width:2; stroke-linejoin:round; stroke-linecap:round;"
+						x="20"
+						y="5"
+						width="10"
+						height="35"
+						/>
+					</g>
+	   
+	   
+				</svg>
+			</div>
+			<div class="container" style="width:calc(100% - 265px);">
+				<input  class="contained progress" id="old-squire-progress" type="range" max="100" value="0" 
+				onmouseover="style.opacity=1" onmouseout="style.opacity=.7" onchange="
+				const audio=document.getElementById(&quot;audio_os&quot;);
+				audio.currentTime=value*audio.duration/100;
+				"
+				onmousedown="document.getElementById(&quot;audio_os&quot;).pause();"
+				onmouseup="
+				const playing=(document.getElementById(&quot;play&quot;).style.display==&quot;none&quot;);
+				if(playing){document.getElementById(&quot;audio_os&quot;).play();}
+				"
+				>
+			</div>
+			<div class="container volume" style="width:50px; float:right;" id="volume_container">
+				<input class="contained" type="range" max="7" value="7" style="width:80%;" onmouseover="style.opacity=1" onmouseout="style.opacity=.7"
+				onchange="
+				const audio=document.getElementsByClassName(&quot;audio&quot;);
+				for(var i=0; i<audio.length; i++){
+					audio[i].volume=value/max;
+				}
+				"
+				>
+			</div>
+			<div class="container" style="width:35px; float:right;">
+				<svg class="contained" style="display:block; height:45px; width:100%; margin:0">
+					<g id="mute_button" style="opacity:.7;" 
+					onmouseover="style.opacity=1;"
+					onmouseout="style.opacity=.7;"
+					onclick="
+						const mute=document.getElementsByClassName(&quot;muted&quot;);
+						if(mute[0].style.opacity==1){
+							for(var i=0;i<mute.length;i++){
+								mute[i].style.opacity=0;
+							}
+							const volume=document.getElementsByClassName(&quot;volume&quot;);
+							for(var i=0;i<volume.length;i++){
+								volume[i].style.opacity=1;
+							}
+							const audio=document.getElementsByClassName(&quot;audio&quot;);
+							for(var i=0;i<audio.length;i++){
+								audio[i].muted=false;
+							}
+						}else{
+							for(var i=0;i<mute.length;i++){
+								mute[i].style.opacity=1;
+							}
+							const volume=document.getElementsByClassName(&quot;volume&quot;);
+							for(var i=0;i<volume.length;i++){
+								volume[i].style.opacity=.5;
+							}
+							const audio=document.getElementsByClassName(&quot;audio&quot;);
+							for(var i=0;i<audio.length;i++){
+								audio[i].muted=true;
+							}
+						}
+					"
+					>
+						<g>
+							<rect 
+							style="fill:#f9f6f6; stroke:#555555; stroke-width:2; stroke-linejoin:round; stroke-linecap:round;"
+							x="5"
+							y="15"
+							width="10"
+							height="15" />
+						<path 
+							style="fill:#f9f6f6; stroke:#555555; stroke-width:2; stroke-linejoin:round; stroke-linecap:round;"
+							d="M 18,15 l 0,15 15,9 0,-33 -15,9 z"
+							/>
+						</g>
+						
+						<path class="muted"
+							style="fill:#f9f6f6; stroke:#555555; stroke-width:2; stroke-linejoin:round; stroke-linecap:round; opacity:0;"
+							d="M 4,13 l 5,-5 10,10 10,-10 5,5 -10,10 10,10 -5,5 -10,-10 -10,10 -5,-5 10,-10 -10,-10 z"
+						/>
+					</g>
+				</svg>
+			</div>
+			<div class="container"  style="width:140px; float:right;">
+				<div class="contained content story">
+					<span class="current" id="os-current">0:00</span>
+					/
+					<span class="length" id="os-length">3:46</span>
+				</div>
+			</div>
+		</div>
+		<div class="col-1 col-space"></div>
+	</div>
+	
+	<div class="header col-4" style="z-index:auto;font-size:50%;position:static;">
+		<div style="position:relative; top:0;">
+			<h1 style="margin:0; padding:2%;">
+			Artifice Tinkering
+			</h1>
+		</div>
+	</div>
+	<div id="old-squire" class="content story row" style="display:block;">
+		
+		
+		
+		<object id="training-grounds" class="background-img" data="training-grounds.svg" style=""></object>
+		<div class="col-1 col-space"></div>
+		<div class="col-2">
+			<p>Once upon a time, there was a kingdom. It was a wonderful kingdom, rich and beautiful. Everyone had warm houses and good food. They were protected by valiant knights and powerful wizards, and could live their lives to the fullest.</p>
+
+			<p>The kingdom was so wonderful that all its people made a wish, that they could enjoy the goodness of the kingdom forever.</p>
+
+			<p>And so seasons passed.</p>
+
+			<p>In this kingdom there was a young boy. He wanted to be one of the knights who protected the realm from the terrible dragons that dwelt outside its borders. And so he approached an old retired knight one day and asked:</p>
+
+			<p>“Good sir Knight, I wish to slay dragons as you do. Please, may I be your squire?”</p>
+
+			<p>“Of course,” the Knight replied. “Train hard and learn all I have to teach you, and you will be the greatest dragon hunter in the land.”</p>
+
+			<p>And so the young man trained and trained, day after day. </p>
+
+			<p>And so seasons passed.</p>
+
+			<p>The squire asked his master, “When will I be made a knight like you?”</p>
+
+			<p>“You will be a knight like me, when I think you are ready to slay a dragon,” the old Knight replied.</p>
+
+			<p>“I am ready to slay a dragon,” the squire said. "I am ready to wield your sword."</p>
+
+			<p>“Oh no you’re not. Not until you have learned all I have to teach you,” said the Knight, “ And you are not there yet. But perhaps soon.”</p>
+
+			<p>And so seasons passed.</p>
+
+			<p>One day, the old Knight eventually succumbed to his age, and passed in his sleep. However, so strong was his wish to enjoy the goodness of the kingdom, and to teach his squire of course, that his spirit lingered. He would not go yet, he decided, he had more to do.</p>
+
+			<p>And so the Knight continued to teach his squire all that he knew, now as a ghost. And so the squire did not mourn his master’s passing, as his master had not truly passed. The square continued to train to fight dragons, and to serve as the knight's squire.</p>
+
+			<p>When he asked his master if he was ready yet to be a knight, the ghost simply shook its head and said, “You are not there yet. But perhaps soon.”</p>
+
+			<p>And so seasons passed.</p>
+
+			<p>A dragon entered the kingdom and flew into the town where the squire trained every day. </p>
+
+			<p>The ghost told his squire, “Today is the day you prove to me that you are ready to be a knight. You have learned all I have to teach you. Take up my sword and slay the dragon.”</p>
+
+			<p>The squire had been sleeping poorly and he felt sick, his stomach upset. He had for a while now. But he took up his master’s weapons and saddled his old horse and went to confront the dragon.</p>
+
+			<p>And the dragon looked upon the squire and laughed, “Who is this old man you send to defeat me?”</p>
+
+			<p>“I am the squire of a great knight, who slayed your kind in the age when this kingdom was great,” said the squire, “I have trained my whole life for this moment.”</p>
+
+			<p>“Congratulations are in order then,” said the dragon with a smirk, “You are the finest dragon hunter in this land. No one else has yet come to oppose me, you see.”</p>
+
+			<p>The squire drew his bow and readied his arrows, but the string was old and worn and snapped under the force of being drawn. The dragon snickered as the squire cursed and dropped the bow.</p>
+
+			<p>The old squire pulled his master's sword from its scabbard, rusted though it was, and charged the dragon, but his old horse gave out under the exertion. The dragon laughed as the squire pulled himself out from under his steed.</p>
+
+			<p>The squire stood and, as the dragon was distracted with laughter, he brought his blade to bare. With a single fluid motion he leapt and struck the dragon's weakest point with his master's sword. The ancient blade snapped off at the hilt as it struck at the dragon’s softest scales, and the dragon ate the old foolish squire whole.</p>
+
+			<p>The ghost of the Knight simply shook its head and said, “I suppose you are not there yet. But perhaps soon.”</p>
+
+			<p>The squire did not reply, for he had passed on. He had never wished to stay in the fallen kingdom, after all.</p>
+
+
+			<br>
+			<br>
+			<br>
+		</div>
+		<div class="col-1 col-space"></div>
+	</div>
+</body>
+

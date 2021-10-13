@@ -27,20 +27,20 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.98994949"
-     inkscape:cx="442.73065"
-     inkscape:cy="199.05224"
+     inkscape:zoom="1.979899"
+     inkscape:cx="308.19252"
+     inkscape:cy="138.22987"
      inkscape:document-units="mm"
      inkscape:current-layer="layer4"
      showgrid="false"
-     inkscape:window-width="741"
-     inkscape:window-height="403"
-     inkscape:window-x="1106"
-     inkscape:window-y="605"
-     inkscape:window-maximized="0" />
+     inkscape:window-width="1852"
+     inkscape:window-height="1057"
+     inkscape:window-x="60"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
   <style
      id="style5496">
-    @import url("https://fonts.googleapis.com/css2?family=Jim+Nightshade");
+    @import url(&quot;https://fonts.googleapis.com/css2?family=Jim+Nightshade&quot;);
 	.star_pin {
 		opacity:0;
 		display:inline;
@@ -319,6 +319,19 @@
        inkscape:collect="always">
       <feGaussianBlur
          id="feGaussianBlur7469-6-7-0"
+         stdDeviation="0.37749143"
+         inkscape:collect="always" />
+    </filter>
+    <filter
+       height="1.3688515"
+       y="-0.18442579"
+       width="1.3515633"
+       x="-0.17578165"
+       id="filter7467-0-3-0"
+       style="color-interpolation-filters:sRGB"
+       inkscape:collect="always">
+      <feGaussianBlur
+         id="feGaussianBlur7469-6-7-5"
          stdDeviation="0.37749143"
          inkscape:collect="always" />
     </filter>
@@ -3101,6 +3114,89 @@
          d="m 88.288701,166.31465 -1.597534,-0.71354 -1.587816,0.73491 0.18496,-1.73984 -1.18961,-1.283 1.711845,-0.36174 0.852597,-1.52785 0.873019,1.51628 1.716543,0.33873 -1.17229,1.29885 z"
          inkscape:transform-center-x="-0.29356756"
          inkscape:transform-center-y="-1.0690788" />
+    </g>
+    <g
+       transform="translate(-39.086542,18.338806)"
+       id="squire_pin"
+       onclick="parent.location='The_old_squire.html'"
+       onmouseover="style.opacity=1"
+       onmouseout="style.opacity=.7"
+       inkscape:label="#g10912"
+       style="opacity:0.7">
+      <rect
+         style="opacity:1;vector-effect:none;fill:#f9f6f6;fill-opacity:0.5744681;fill-rule:evenodd;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:0.50000001, 2.00000003;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect5223-3"
+         width="2.3623512"
+         height="2.2678571"
+         x="138.84973"
+         y="233.88126"
+         ry="1.1600683e-013" />
+      <g
+         transform="translate(53.198488,71.037125)"
+         inkscape:label="#g6387"
+         style="display:inline;opacity:0"
+         id="squire_star"
+         class="star_pin">
+        <path
+           inkscape:transform-center-y="-1.0690788"
+           inkscape:transform-center-x="-0.29356756"
+           d="m 88.288693,166.31465 -1.597533,-0.71354 -1.587817,0.73491 0.18496,-1.73984 -1.18961,-1.283 1.711845,-0.36174 0.852598,-1.52785 0.873018,1.51628 1.716544,0.33873 -1.17229,1.29885 z"
+           inkscape:randomized="0"
+           inkscape:rounded="0"
+           inkscape:flatsided="false"
+           sodipodi:arg2="1.5640882"
+           sodipodi:arg1="0.93576962"
+           sodipodi:r2="1.4679292"
+           sodipodi:r1="2.7096815"
+           sodipodi:cy="164.13321"
+           sodipodi:cx="86.681313"
+           sodipodi:sides="5"
+           id="path7358-7-7-7-8"
+           style="display:inline;opacity:1;vector-effect:none;fill:#f9f6f6;fill-opacity:1;fill-rule:nonzero;stroke:#282828;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;filter:url(#filter7467-0-3-0)"
+           sodipodi:type="star" />
+        <path
+           inkscape:transform-center-y="-1.0690788"
+           inkscape:transform-center-x="-0.29356756"
+           d="m 88.288701,166.31465 -1.597534,-0.71354 -1.587816,0.73491 0.18496,-1.73984 -1.18961,-1.283 1.711845,-0.36174 0.852597,-1.52785 0.873019,1.51628 1.716543,0.33873 -1.17229,1.29885 z"
+           inkscape:randomized="0"
+           inkscape:rounded="0"
+           inkscape:flatsided="false"
+           sodipodi:arg2="1.5640882"
+           sodipodi:arg1="0.93576962"
+           sodipodi:r2="1.4679292"
+           sodipodi:r1="2.7096815"
+           sodipodi:cy="164.13321"
+           sodipodi:cx="86.68132"
+           sodipodi:sides="5"
+           id="path7358-6-7-20"
+           style="display:inline;opacity:1;vector-effect:none;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#282828;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           sodipodi:type="star" />
+      </g>
+      <rect
+         style="opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:0.66161613;fill-rule:evenodd;stroke:none;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect9837-3-3"
+         width="12.96257"
+         height="3.174001"
+         x="133.08333"
+         y="230.63123"
+         ry="1.1600683e-013" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:0.26458332px;font-family:'Jim Nightshade';-inkscape-font-specification:'Jim Nightshade, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         x="131.56702"
+         y="233.21268"
+         id="text5622-4-8-52-2-5"><tspan
+           sodipodi:role="line"
+           x="131.56702"
+           y="233.21268"
+           style="font-size:3.52777767px;stroke-width:0.26458332"
+           id="tspan9812-0-9">The Old Squire</tspan></text>
+      <circle
+         style="opacity:1;vector-effect:none;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#282828;stroke-width:0.56;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="path7199-3-8-9"
+         cx="139.93599"
+         cy="235.07269"
+         r="0.70870537" />
     </g>
   </g>
 </svg>

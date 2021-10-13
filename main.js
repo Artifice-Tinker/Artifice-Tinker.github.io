@@ -4,7 +4,7 @@ function toggleMap(){
 	else style.visibility="visible";
 }
 function closeMap(){
-	document.getElementById("map").style.visibility="visible";
+	document.getElementById("map").style.visibility="collapse";
 }
 const calcTime = (secs) => {
   const minutes = Math.floor(secs / 60);

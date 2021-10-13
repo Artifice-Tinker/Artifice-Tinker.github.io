@@ -3,6 +3,8 @@ background-color: #f9f6f6;
 margin:0;
 }
 
+
+
 *{
 	box-sizing: border-box;
 }
@@ -18,6 +20,16 @@ margin:0;
 .col-2 {width:50%;}
 .col-3 {width:75%;}
 .col-4 {width:100%;}
+
+.header{
+padding:0 !important;
+position: fixed;
+top:0;
+left:0;
+z-index: 2;
+background-color: #f9f6f6;
+}
+
 [class*="col-"] {float: left;padding: 15px;}
 @media only screen and (max-width: 900px) {
   /* For mobile phones: */
@@ -32,6 +44,9 @@ margin:0;
 	  left:25%;
 	  opacity:.4;
 	  top:15%
+  }
+  .header{
+	  background-color: #f3f0f0;
   }
 }
 
@@ -96,13 +111,7 @@ input[type=range]::-moz-range-thumb {
   cursor: pointer;
 }
 
-.header{
-padding:0;
-position: sticky;
-top:0;
-left:0;
-z-index: 2
-}
+
 
 .audio-player{
 position: fixed;
@@ -146,7 +155,6 @@ text-align: center;
 font-size: 300%;
 color: #333333;
 opacity: .7;
-background-color: #f9f6f6;
 }
 
 
@@ -156,7 +164,7 @@ margin-top: 0;
 font-family: 'IBM Plex Sans', sans-serif;
 word-spacing: 30%;
 text-align:left;
-font-size: 130%;
+font-size: 150%;
 color: #555555;
 }
 
