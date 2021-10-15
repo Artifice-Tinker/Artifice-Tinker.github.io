@@ -4,6 +4,75 @@
 <meta charset="utf-8">
 <head>
 <script src="main.js"></script>
+<script>
+const per0=new Map([
+	["layer2",1],
+	["layer4",1],
+	["layer5",0],
+	["layer7",0],
+	["layer3",0],
+	["layer9",0]
+	]);
+const per10=null;
+const per25=new Map([
+	["layer2",1],
+	["layer4",1],
+	["layer5",0],
+	["layer7",1],
+	["layer3",0],
+	["layer9",0]
+	]);
+const per30=null;
+const per80=new Map([
+	["layer2",1],
+	["layer4",1],
+	["layer5",1],
+	["layer7",1],
+	["layer3",0],
+	["layer9",0]
+	]);
+const per90=null;
+const per95=new Map([
+	["layer2",0],
+	["layer4",0],
+	["layer5",1],
+	["layer7",0],
+	["layer3",1],
+	["layer9",0]
+	]);
+const per98=null;
+const per100=new Map([
+	["layer2",0],
+	["layer4",0],
+	["layer5",1],
+	["layer7",0],
+	["layer3",0],
+	["layer9",1]
+	]);
+const presets=new Map([
+	[0,per0],
+	[5,per10],
+	[15,per25],
+	[30,per30],
+	[40,per80],
+	[43,per90],
+	[55,per95],
+	[70,per98],
+	[100,per100]
+	]);
+	
+var playing=false;
+
+window.onscroll = function() {
+	if(playing)return;
+	bg_image_percent(document.documentElement.scrollTop/(document.documentElement.scrollHeight-document.documentElement.clientHeight));
+};
+
+function bg_image_percent(percentThrough){
+	const svg=document.getElementById("training-grounds").contentDocument;
+	changeSvg(svg,percentThrough*100,presets);
+}
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Jim+Nightshade&display=swap" rel="stylesheet"> 
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Jim+Nightshade&display=swap" rel="stylesheet"> 
 <link rel="stylesheet" type="text/css" href="style.css">
@@ -46,6 +115,7 @@
 						style.display=&quot;none&quot;;
 						const audio=document.getElementById(&quot;audio_os&quot;);
 						audio.play()
+						playing=true;
 
 						"
 					d="M 5,5 L 5,40 L 35.31,22.5 L5,5"
@@ -57,6 +127,7 @@
 					onclick="document.getElementById(&quot;play&quot;).style.display=&quot;block&quot;;
 					style.display=&quot;none&quot;;
 					document.getElementById(&quot;audio_os&quot;).pause();
+					playing=false;
 					"
 					>
 						<rect
@@ -159,7 +230,7 @@
 				<div class="contained content story">
 					<span class="current" id="os-current">0:00</span>
 					/
-					<span class="length" id="os-length">3:46</span>
+					<span class="length" id="os-length">4:28</span>
 				</div>
 			</div>
 		</div>

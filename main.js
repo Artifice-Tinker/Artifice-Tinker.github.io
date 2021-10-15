@@ -28,3 +28,43 @@ function interactiveMap(current_page){
 	map.getElementById(current_page+"_pin").onclick="";
 	map.getElementById(current_page+"_star").style.opacity=1;
 }
+
+function changeSvg(svgID, percent, presets){
+	function subpercent(total, min, max){
+		return (total-min)/(max-min);
+	}
+	//'presets' is type map, with ordered integer keys coorasponding to first percent to be used
+	//'presets' values are type map(elementID,opacity) or 'null' for transition
+	const keys=presets.keys();
+	var last={val:0};
+	var prev={val:0};
+	var surounding={prev:-1,next:-1};
+	presets.forEach(function(value,key){
+		if(surounding.prev>-1)return;
+		if(key>percent){
+			surounding.prev=prev.val;
+			surounding.next=key;
+			return;
+		}
+		prev.val=last.val;
+		last.val=key;
+	});
+	
+	const preset=presets.get(last.val);
+	if(preset!=null){
+		preset.forEach(function(value,key){
+			svgID.getElementById(key).style.opacity=value;
+		})
+	}
+	else{
+		const per=subpercent(percent,last.val,surounding.next);
+		var mix= new Map();
+		presets.get(surounding.prev).forEach(function(value,key){
+			mix.set(key,value*(1-per)+presets.get(surounding.next).get(key)*per);
+		});
+		mix.forEach(function(value,key){
+			svgID.getElementById(key).style.opacity=value;
+		})
+	}
+
+}

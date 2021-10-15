@@ -26,11 +26,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.7"
-     inkscape:cx="16.996879"
-     inkscape:cy="395.14842"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="215.15709"
+     inkscape:cy="422.85059"
      inkscape:document-units="mm"
-     inkscape:current-layer="svg8"
+     inkscape:current-layer="layer4"
      showgrid="false"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -49,7 +49,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -73,7 +73,8 @@
      id="layer3"
      inkscape:label="Layer 3"
      transform="translate(-6.614583,-140.51785)"
-     sodipodi:insensitive="true">
+     sodipodi:insensitive="true"
+     style="display:inline">
     <path
        style="fill:#97c7eb;fill-opacity:0.4848485;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 21.034381,191.04662 c -4.948026,-11.31532 0.791779,-10.20984 -0.374043,-21.00521 1.61917,-7.00357 2.0925,-16.96597 4.928752,-20.64461 29.982524,-17.30536 93.03404,1.49586 140.11802,0.0704 9.46672,8.35532 13.48728,15.04006 15.23436,21.38156 0.0539,10.89946 -5.98177,16.88791 -8.41899,21.38156 -48.73214,-1.02453 -129.127555,-6.19719 -151.488099,-1.18372 z"
@@ -233,7 +234,8 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(-6.614583,-140.51785)"
-     sodipodi:insensitive="true">
+     sodipodi:insensitive="true"
+     style="display:inline">
     <image
        y="156.47835"
        x="26.41526"
@@ -247,8 +249,8 @@
   <g
      inkscape:groupmode="layer"
      id="layer4"
-     inkscape:label="overlay1"
-     style="opacity:0"
+     inkscape:label="brown"
+     style="display:inline;opacity:0"
      sodipodi:insensitive="true">
     <path
        style="fill:#5a4114;fill-opacity:0.28140702;stroke:none;stroke-width:0.28947327px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -398,8 +400,8 @@
   <g
      inkscape:groupmode="layer"
      id="layer6"
-     inkscape:label="overlay2"
-     style="opacity:0"
+     inkscape:label="green"
+     style="display:inline;opacity:0"
      sodipodi:insensitive="true">
     <g
        transform="translate(-6.614583,-140.51785)"
@@ -532,7 +534,7 @@
   <g
      inkscape:groupmode="layer"
      id="layer5"
-     inkscape:label="overlay3"
+     inkscape:label="fire"
      style="opacity:0">
     <path
        style="opacity:1;fill:#dc4242;fill-opacity:1;stroke:none;stroke-width:0.32061753px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"

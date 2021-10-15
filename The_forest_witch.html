@@ -5,45 +5,49 @@
 <head>
 <script src="main.js"></script>
 <script>
+const per0=new Map([
+	["layer4",0],
+	["layer5",0],
+	["layer6",0]
+	]);
+const per27=null;
+const per45=new Map([
+	["layer4",1],
+	["layer5",0],
+	["layer6",0]
+	]);
+const per71=null;
+const per90=new Map([
+	["layer4",.25],
+	["layer5",0],
+	["layer6",.75]
+	]);
+const per98=null;
+const per100=new Map([
+	["layer4",.5],
+	["layer5",1],
+	["layer6",.25]
+	]);
+const presets=new Map([
+	[0,per0],
+	[27,per27],
+	[45,per45],
+	[71,per71],
+	[90,per90],
+	[98,per98],
+	[100,per100]
+	]);
+	
+var playing=false;
 
+window.onscroll = function() {
+	if(playing)return;
+	bg_image_percent(document.documentElement.scrollTop/(document.documentElement.scrollHeight-document.documentElement.clientHeight));
+};
 
 function bg_image_percent(percentThrough){
-	function subpercent(total, min, max){
-		return (total-min)/(max-min);
-	}
 	const svg=document.getElementById("farm_svg").contentDocument;
-	if(percentThrough<.27){//normal image
-		svg.getElementById("layer4").style.opacity=0;
-		svg.getElementById("layer5").style.opacity=0;
-		svg.getElementById("layer6").style.opacity=0;
-	}
-	else if(.27<=percentThrough&&percentThrough<.45){//transition1
-		svg.getElementById("layer4").style.opacity=subpercent(percentThrough,.27,.45);
-		svg.getElementById("layer5").style.opacity=0;
-		svg.getElementById("layer6").style.opacity=0;
-	}
-	else if(.45<=percentThrough&&percentThrough<.71){//1
-		svg.getElementById("layer4").style.opacity=1;
-		svg.getElementById("layer5").style.opacity=0;
-		svg.getElementById("layer6").style.opacity=0;
-	}
-	else if(.71<=percentThrough&&percentThrough<.90){//1-2
-		const per = subpercent(percentThrough,.71,.90)*3/4;
-		svg.getElementById("layer4").style.opacity=1-per;
-		svg.getElementById("layer5").style.opacity=0;
-		svg.getElementById("layer6").style.opacity=per;
-	}
-	else if(.90<=percentThrough&&percentThrough<.98){//1&2
-		svg.getElementById("layer4").style.opacity=.25;
-		svg.getElementById("layer5").style.opacity=0;
-		svg.getElementById("layer6").style.opacity=.75;
-	}
-	else{//1&2&3
-		const per= subpercent(percentThrough,.98,1);
-		svg.getElementById("layer4").style.opacity=.25*per+.25;
-		svg.getElementById("layer5").style.opacity=per;
-		svg.getElementById("layer6").style.opacity=(1-per)/2+.25;
-	}
+	changeSvg(svg,percentThrough*100,presets);
 }
 </script>
 <link href="https://fonts.googleapis.com/css2?family=Jim+Nightshade&display=swap" rel="stylesheet"> 
@@ -88,7 +92,7 @@ function bg_image_percent(percentThrough){
 						style.display=&quot;none&quot;;
 						const audio=document.getElementById(&quot;audio_fw&quot;);
 						audio.play()
-
+						playing=true;
 						"
 					d="M 5,5 L 5,40 L 35.31,22.5 L5,5"
 					/>
@@ -99,6 +103,7 @@ function bg_image_percent(percentThrough){
 					onclick="document.getElementById(&quot;play&quot;).style.display=&quot;block&quot;;
 					style.display=&quot;none&quot;;
 					document.getElementById(&quot;audio_fw&quot;).pause();
+					playing=false;
 					"
 					>
 						<rect
