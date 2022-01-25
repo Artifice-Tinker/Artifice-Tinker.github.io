@@ -13,7 +13,7 @@ const calcTime = (secs) => {
   return `${minutes}:${returnedSeconds}`;
 }
 
-function interactiveMap(current_page){
+function interactiveMap(){
 	const todo=["metaphysics_pin","farmer_pin","litch_pin","morality_pin","ethics_pin","support_pin"];
 	const map=document.getElementById("map_svg").contentDocument;
 	for(var i=0;i<todo.length;i++){
@@ -22,11 +22,11 @@ function interactiveMap(current_page){
 		map.getElementById(todo[i]).onclick="";
 		map.getElementById(todo[i]).style.opacity=.4;
 	}
-	map.getElementById(current_page+"_pin").style.opacity=1;
-	map.getElementById(current_page+"_pin").onmouseover="";
-	map.getElementById(current_page+"_pin").onmouseout="";
-	map.getElementById(current_page+"_pin").onclick="";
-	map.getElementById(current_page+"_star").style.opacity=1;
+	map.getElementById(pageName+"_pin").style.opacity=1;
+	map.getElementById(pageName+"_pin").onmouseover="";
+	map.getElementById(pageName+"_pin").onmouseout="";
+	map.getElementById(pageName+"_pin").onclick="";
+	map.getElementById(pageName+"_star").style.opacity=1;
 }
 
 function changeSvg(svgID, percent, presets){
@@ -67,4 +67,32 @@ function changeSvg(svgID, percent, presets){
 		})
 	}
 
+}
+
+function includeHTML() {
+  var z, i, elmnt, file, xhttp;
+  /* Loop through a collection of all HTML elements: */
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    /*search for elements with a certain atrribute:*/
+    file = elmnt.getAttribute("w3-include-html");
+    if (file) {
+      /* Make an HTTP request using the attribute value as the file name: */
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          /* Remove the attribute, and call this function once more: */
+          elmnt.removeAttribute("w3-include-html");
+          includeHTML();
+        }
+      }
+      xhttp.open("GET", file, true);
+      xhttp.send();
+      /* Exit the function: */
+      return 1;
+    }
+  }
 }
