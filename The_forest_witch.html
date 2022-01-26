@@ -4,7 +4,17 @@
 <meta charset="utf-8">
 <head>
 <script src="main.js"></script>
-<script> const pageName="witch"; </script>
+<script> 
+	const pageName="witch"; 
+	const audioSource="The_forest_witch.m4a";
+	function audioSetup(){
+		document.getElementById("source").src=audioSource;
+		const audio=document.getElementById("audio");
+		audio.load();
+		setTimeout(function(){document.getElementById("audio-length").innerHTML=calcTime(audio.duration);},300);
+		
+	}
+</script>
 <script>
 const per0=new Map([
 	["layer4",0],
@@ -56,152 +66,9 @@ function bg_image_percent(percentThrough){
 <link rel="stylesheet" type="text/css" href="style.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>
+<body onload="setTimeout(audioSetup,100);">
+	<div w3-include-html="audio_player.html" ></div>
 	<div w3-include-html="header.html"></div>
-	<div class="row audio-player">
-		<div class="col-1 col-space"></div>
-		<div id="player" class="col-2">
-			<audio class="audio" id="audio_fw" ontimeupdate="
-			document.getElementById(&quot;forest-witch-progress&quot;).value=Math.floor(currentTime/duration*100);
-			document.getElementById(&quot;fw-current&quot;).innerHTML=calcTime(currentTime);
-			bg_image_percent(currentTime/duration);
-			"
-			>
-				<source src="The_forest_witch.m4a" type=" audio/x-m4a" 
-				>	
-			</audio>
-			<div class="container" style="width:40px;">
-				<svg class="contained" style="display:block; height:45px; width:45px;margin:0">
-					<path 
-					id="play" 
-					style="opacity:0.7; fill:#f9f6f6; stroke:#555555; stroke-width:2; stroke-linejoin:round; stroke-linecap:round;"
-					onmouseover="style.opacity=1;"
-					onmouseout="style.opacity=.7;"
-					onclick="
-						document.getElementById(&quot;pause&quot;).style.display=&quot;block&quot;;
-						style.display=&quot;none&quot;;
-						const audio=document.getElementById(&quot;audio_fw&quot;);
-						audio.play()
-						playing=true;
-						"
-					d="M 5,5 L 5,40 L 35.31,22.5 L5,5"
-					/>
-					
-					<g id="pause" style="display:none;" 
-					onmouseover="style.opacity=1;"
-					onmouseout="style.opacity=.7;"
-					onclick="document.getElementById(&quot;play&quot;).style.display=&quot;block&quot;;
-					style.display=&quot;none&quot;;
-					document.getElementById(&quot;audio_fw&quot;).pause();
-					playing=false;
-					"
-					>
-						<rect
-						style="fill:#f9f6f6; stroke:#555555; stroke-width:2; stroke-linejoin:round; stroke-linecap:round;"
-						x="7"
-						y="5"
-						width="10"
-						height="35"
-						/>
-						<rect
-						style=" fill:#f9f6f6; stroke:#555555; stroke-width:2; stroke-linejoin:round; stroke-linecap:round;"
-						x="20"
-						y="5"
-						width="10"
-						height="35"
-						/>
-					</g>
-	   
-	   
-				</svg>
-			</div>
-			<div class="container" style="width:calc(100% - 265px);">
-				<input  class="contained progress" id="forest-witch-progress" type="range" max="100" value="0" 
-				onmouseover="style.opacity=1" onmouseout="style.opacity=.7" onchange="
-				const audio=document.getElementById(&quot;audio_fw&quot;);
-				audio.currentTime=value*audio.duration/100;
-				"
-				onmousedown="document.getElementById(&quot;audio_fw&quot;).pause();"
-				onmouseup="
-				const playing=(document.getElementById(&quot;play&quot;).style.display==&quot;none&quot;);
-				if(playing){document.getElementById(&quot;audio_fw&quot;).play();}
-				"
-				>
-			</div>
-			<div class="container volume" style="width:50px; float:right;" id="volume_container">
-				<input class="contained" type="range" max="7" value="7" style="width:80%;" onmouseover="style.opacity=1" onmouseout="style.opacity=.7"
-				onchange="
-				const audio=document.getElementsByClassName(&quot;audio&quot;);
-				for(var i=0; i<audio.length; i++){
-					audio[i].volume=value/max;
-				}
-				"
-				>
-			</div>
-			<div class="container" style="width:35px; float:right;">
-				<svg class="contained" style="display:block; height:45px; width:100%; margin:0">
-					<g id="mute_button" style="opacity:.7;" 
-					onmouseover="style.opacity=1;"
-					onmouseout="style.opacity=.7;"
-					onclick="
-						const mute=document.getElementsByClassName(&quot;muted&quot;);
-						if(mute[0].style.opacity==1){
-							for(var i=0;i<mute.length;i++){
-								mute[i].style.opacity=0;
-							}
-							const volume=document.getElementsByClassName(&quot;volume&quot;);
-							for(var i=0;i<volume.length;i++){
-								volume[i].style.opacity=1;
-							}
-							const audio=document.getElementsByClassName(&quot;audio&quot;);
-							for(var i=0;i<audio.length;i++){
-								audio[i].muted=false;
-							}
-						}else{
-							for(var i=0;i<mute.length;i++){
-								mute[i].style.opacity=1;
-							}
-							const volume=document.getElementsByClassName(&quot;volume&quot;);
-							for(var i=0;i<volume.length;i++){
-								volume[i].style.opacity=.5;
-							}
-							const audio=document.getElementsByClassName(&quot;audio&quot;);
-							for(var i=0;i<audio.length;i++){
-								audio[i].muted=true;
-							}
-						}
-					"
-					>
-						<g>
-							<rect 
-							style="fill:#f9f6f6; stroke:#555555; stroke-width:2; stroke-linejoin:round; stroke-linecap:round;"
-							x="5"
-							y="15"
-							width="10"
-							height="15" />
-						<path 
-							style="fill:#f9f6f6; stroke:#555555; stroke-width:2; stroke-linejoin:round; stroke-linecap:round;"
-							d="M 18,15 l 0,15 15,9 0,-33 -15,9 z"
-							/>
-						</g>
-						
-						<path class="muted"
-							style="fill:#f9f6f6; stroke:#555555; stroke-width:2; stroke-linejoin:round; stroke-linecap:round; opacity:0;"
-							d="M 4,13 l 5,-5 10,10 10,-10 5,5 -10,10 10,10 -5,5 -10,-10 -10,10 -5,-5 10,-10 -10,-10 z"
-						/>
-					</g>
-				</svg>
-			</div>
-			<div class="container"  style="width:140px; float:right;">
-				<div class="contained content story">
-					<span class="current" id="fw-current">0:00</span>
-					/
-					<span class="length" id="fw-length">3:46</span>
-				</div>
-			</div>
-		</div>
-		<div class="col-1 col-space"></div>
-	</div>
 	<div id="forest_witch" class="content story row" style="display:block;">
 		
 		
