@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<head>
+<script src="main.js"></script>
+<script> const pageName="farmer"; </script>
+link href="https://fonts.googleapis.com/css2?family=Jim+Nightshade&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Jim+Nightshade&display=swap" rel="stylesheet"> 
+<link rel="stylesheet" type="text/css" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<div w3-include-html="header.html"></div>
+	<div class="row audio-player">
+		<div class="col-1 col-space"></div>
+		<div id="player" class="col-2">
+			<audio class="audio" id="audio_fw" ontimeupdate="
+			document.getElementById(&quot;forest-witch-progress&quot;).value=Math.floor(currentTime/duration*100);
+			document.getElementById(&quot;fw-current&quot;).innerHTML=calcTime(currentTime);
+			bg_image_percent(currentTime/duration);
+			"
+			>
+				<!-- <source src="The_forest_witch.m4a" type=" audio/x-m4a"  -->
+				>	
+			</audio>
+			<div class="container" style="width:40px;">
+				<svg class="contained" style="display:block; height:45px; width:45px;margin:0">
+					<path 
+					id="play" 
+					style="opacity:0.7; fill:#f9f6f6; stroke:#555555; stroke-width:2; stroke-linejoin:round; stroke-linecap:round;"
+					onmouseover="style.opacity=1;"
+					onmouseout="style.opacity=.7;"
+					onclick="
+						document.getElementById(&quot;pause&quot;).style.display=&quot;block&quot;;
+						style.display=&quot;none&quot;;
+						const audio=document.getElementById(&quot;audio_fw&quot;);
+						audio.play()
+						playing=true;
+						"
+					d="M 5,5 L 5,40 L 35.31,22.5 L5,5"
+					/>
+					
+					<g id="pause" style="display:none;" 
+					onmouseover="style.opacity=1;"
+					onmouseout="style.opacity=.7;"
+					onclick="document.getElementById(&quot;play&quot;).style.display=&quot;block&quot;;
+					style.display=&quot;none&quot;;
+					document.getElementById(&quot;audio_fw&quot;).pause();
+					playing=false;
+					"
+					>
+						<rect
+						style="fill:#f9f6f6; stroke:#555555; stroke-width:2; stroke-linejoin:round; stroke-linecap:round;"
+						x="7"
+						y="5"
+						width="10"
+						height="35"
+						/>
+						<rect
+						style=" fill:#f9f6f6; stroke:#555555; stroke-width:2; stroke-linejoin:round; stroke-linecap:round;"
+						x="20"
+						y="5"
+						width="10"
+						height="35"
+						/>
+					</g>
+	   
+	   
+				</svg>
+			</div>
+			<div class="container" style="width:calc(100% - 265px);">
+				<input  class="contained progress" id="forest-witch-progress" type="range" max="100" value="0" 
+				onmouseover="style.opacity=1" onmouseout="style.opacity=.7" onchange="
+				const audio=document.getElementById(&quot;audio_fw&quot;);
+				audio.currentTime=value*audio.duration/100;
+				"
+				onmousedown="document.getElementById(&quot;audio_fw&quot;).pause();"
+				onmouseup="
+				const playing=(document.getElementById(&quot;play&quot;).style.display==&quot;none&quot;);
+				if(playing){document.getElementById(&quot;audio_fw&quot;).play();}
+				"
+				>
+			</div>
+			<div class="container volume" style="width:50px; float:right;" id="volume_container">
+				<input class="contained" type="range" max="7" value="7" style="width:80%;" onmouseover="style.opacity=1" onmouseout="style.opacity=.7"
+				onchange="
+				const audio=document.getElementsByClassName(&quot;audio&quot;);
+				for(var i=0; i<audio.length; i++){
+					audio[i].volume=value/max;
+				}
+				"
+				>
+			</div>
+			<div class="container" style="width:35px; float:right;">
+				<svg class="contained" style="display:block; height:45px; width:100%; margin:0">
+					<g id="mute_button" style="opacity:.7;" 
+					onmouseover="style.opacity=1;"
+					onmouseout="style.opacity=.7;"
+					onclick="
+						const mute=document.getElementsByClassName(&quot;muted&quot;);
+						if(mute[0].style.opacity==1){
+							for(var i=0;i<mute.length;i++){
+								mute[i].style.opacity=0;
+							}
+							const volume=document.getElementsByClassName(&quot;volume&quot;);
+							for(var i=0;i<volume.length;i++){
+								volume[i].style.opacity=1;
+							}
+							const audio=document.getElementsByClassName(&quot;audio&quot;);
+							for(var i=0;i<audio.length;i++){
+								audio[i].muted=false;
+							}
+						}else{
+							for(var i=0;i<mute.length;i++){
+								mute[i].style.opacity=1;
+							}
+							const volume=document.getElementsByClassName(&quot;volume&quot;);
+							for(var i=0;i<volume.length;i++){
+								volume[i].style.opacity=.5;
+							}
+							const audio=document.getElementsByClassName(&quot;audio&quot;);
+							for(var i=0;i<audio.length;i++){
+								audio[i].muted=true;
+							}
+						}
+					"
+					>
+						<g>
+							<rect 
+							style="fill:#f9f6f6; stroke:#555555; stroke-width:2; stroke-linejoin:round; stroke-linecap:round;"
+							x="5"
+							y="15"
+							width="10"
+							height="15" />
+						<path 
+							style="fill:#f9f6f6; stroke:#555555; stroke-width:2; stroke-linejoin:round; stroke-linecap:round;"
+							d="M 18,15 l 0,15 15,9 0,-33 -15,9 z"
+							/>
+						</g>
+						
+						<path class="muted"
+							style="fill:#f9f6f6; stroke:#555555; stroke-width:2; stroke-linejoin:round; stroke-linecap:round; opacity:0;"
+							d="M 4,13 l 5,-5 10,10 10,-10 5,5 -10,10 10,10 -5,5 -10,-10 -10,10 -5,-5 10,-10 -10,-10 z"
+						/>
+					</g>
+				</svg>
+			</div>
+			<div class="container"  style="width:140px; float:right;">
+				<div class="contained content story">
+					<span class="current" id="fw-current">0:00</span>
+					/
+					<span class="length" id="fw-length">3:46</span>
+				</div>
+			</div>
+		</div>
+		<div class="col-1 col-space"></div>
+	</div>
+	<div id="forest_witch" class="content story row" style="display:block;">
+		
+		
+		<!-- <object id="farm_svg" class="background-img" data="farm.svg" style=""></object> -->
+		<div class="col-1 col-space"></div>
+		<div class="col-2">
+			<p>Once upon a time, there was a kingdom. It was a broken kingdom, decrepit and rotting. The houses had been destroyed by dragons and people fought over what little food there was. The valiant knights and powerful wizards of ages past no longer protected the land, and all anyone could do was scrape by.
+			<br>
+			<p>And that is to say nothing of the ghosts which haunted the land.
+			<br>
+			<p>In this kingdom there was a boy. His parents were dead, and gone, fortunately. He wouldn't be able to function at all if they decided to nag at him from beyond the grave. But even still, the boy did not know how to make a living for himself.
+			<br>
+			<p>He had resorted to begging, but none in the town could spare him any food, for they were quite poor as well, but some of the townsfolk told him to ask the witch living in the forest, as she had helped them in the past.
+			<br>
+			<p>And so, the hungry child wandered into the woods in search of something to eat.
+			<br>
+			<p>A ways into the forest he found the witch's hut and the witch cooking some stew inside for supper.
+			<br>
+			<p>"Come in, come in," she said, "and tell me your troubles. Maybe I can help."
+			<br>
+			<p>And so the boy ate some stew told the witch about his situation. He hadn't felt so full in quite a while.
+			<br>
+			<p>"Come with me then," said the witch as he finished off his bowl, and off they went, deeper into the woods.
+			<br>
+			<p>"When I was your age," she said as they walked, "back before I was a witch, I came into this forest and was guided by the fairies. They showed me visions of how to hunt and where to fish and what plants were safe to eat. Mostly, at least. Sometimes they like to have fun. Perhaps they can help you too."
+			<br>
+			<p>Then the two came to the fairy ring in a grove. It was late into the night, but the moon shown brightly through the leaves above. The witch told the boy that he should go to sleep inside the ring, and that she would protect him during the night.
+			<br>
+			<p>And so the boy laid his head down on the moss covered stones, and it was late and he was full, and so he quickly drifted off to sleep.
+			<br>
+			<p>He slept and dreamt of fairies. 
+			<br>
+			<p>He saw an outdoor banquette with golden tables filled with more food than he had ever seen, with more kinds of food than he had ever heard of, even from when the dead kingdom had been great.
+			<br>
+			<p>He was invited in and presented to the fairy king, who laughed heartily and offered him a seat at the table. Whatever he wished for appeared before him.
+			<br>
+			<p>Once he had eaten his fill, the table was removed by some sorcery, and with a little more magic, the grove was filled with music. The boy clapped his hands and danced merrily.
+			<br>
+			<p>And then the dream broke, and he awoke blearily within the witch's hut.
+			<br>
+			<p>He felt weak and hungry, as hungry as he ever had been, and looked around, and though it was mid-day, he found the witch asleep beside the bed.
+			<br>
+			<p>He tried to get up and the witch awoke.
+			<br>
+			<p>"Thank goodness you're awake." She said, "You wouldn't wake up when the sun rose so I brought you back here and tried to wake you, but nothing worked. You've been asleep all week."
+			<br>
+			<p>"I was having a good dream," said the boy, "There was a party, and the most amazing food, and music, and dancing. And the king let me use his magic table."
+			<br>
+			<p>The witch sighed and forbid the boy from going back.
+			<br>
+			<p>"We are not fay, child." she said, "We cannot survive on dreams alone. Stay with me and I will show you how to live in the forest, but you cannot go back to the fairy ring. It is too dangerous for you."
+			<br>
+			<p>And so the boy learned to survive in the woods, foraging and hunting as the witch showed him, and collecting herbs for her potions, but he never forgot about the dream he had.
+			<br>
+			<p>One day while he was out foraging, he found a bush laden with berries he remembered from the feast. He ate them and found that they were just as good as he remembered from his dream.
+			<br>
+			<p>And so he gathered them and set off looking for other fruits and vegetables from his dream, and though he did not find them all, he found many and gathered them up.
+			<br>
+			<p>But the witch noticed what he was doing, and feared that he was still obsessed and would go back to the ring and be taken by the fay. And so she cast him out of her forest.
+			<br>
+			<p>"East of here, at the edge of the woods, there is a farm. It is haunted and overgrown and was burned down by a dragon, and no one alive will claim it, but you may stay there while you plan what it is you'll do next," she said, "I'm sorry I couldn't help you more, but this forest is not the place for you."
+			<br>
+			<p>And so the boy left the forest, but he brought the seeds from the fruits and berries with him, for the witch had given him an idea.</p>
+			<br>
+			<hr>
+			<br>
+			<p>He spent his first day searching through the remains of the old farm.  At the end of the farm he found a small patch of grains growing wild and a few burrows around which he placed his snares. The well water was brackish so he filled his skins from the stream near the forest. In the burnt remnants of the main house he found old tools , in poor shape of course, but they would better than nothing.
+			<br>
+			<p>He also found a small diary. Whatever words it had contained had been washed away by the elements, but the paper itself would serve and the binding was still strong.
+			<br>
+			<p>He built a simple shelter in the remains of the house and rested, for he was tired and expected to work very hard tomorrow clearing the fields.
+			<br>
+			<p>But he found he could not sleep, because the ghosts would not shut up.
+			<br>
+			<p>All through the night they wailed. They wailed about everything: about the fields being left overgrown and their house destroyed and also about this new vagrant sleeping in their house.
+			<br>
+			<p>"How rude," they cried, "This child has no manners. Had he simply asked, we would have put him up in the barn-"
+			<br>
+			<p>"Oh the barn. How could this have happened? It's all gone."
+			<br>
+			<p>"- But instead he's sleeping on the dining room table-"
+			<br>
+			<p>"Oh not the table. That was my favorite. My grandfather made that for us you know, and now it's gone."
+			<br>
+			<p>"- without even doing his chores yet! Children these days have no respect for a hard day's work..."
+			<br>
+			<p>And so on it went, all through the night.
+			<br>
+			<p>But the boy was determined and he rose with the sun and began clearing the fields nearest to the stream that would be enough for just him, he thought. He moved his shelter out there as well, to get away from the spirits, though it did little good.
+			<br>
+			<p>"That's not how you use a scythe you foolish boy! But I should make you keep swinging that way for letting the fields get this bad! And stop drinking from the river, you don't know where it's been! Everyone here drinks from the well!"
+			<br>
+			<p>The boy found that the ghost was right, at least about the scythe, and he improved his technique over the course of the day. He stayed clear of the stagnant well's water, though.
+			<br>
+			<p>He slept more peacefully that night, though more from exhaustion than any calm given from the ghosts.
+			<br>
+			<p>"...and there's a stranger out in our fields! I think maybe he's here to steal something!"
+			<br>
+			<p>"We should call the guards. And the carpenters; have you seen the state of our roof?"
+			<br>
+			<p>"It used to be that when a storm or fire or whatever happened to it destroyed a barn you could rely on the community to help put it back together. It's like no one cares about anyone but themselves anymore..."
+			<br>
+			<p>The next day, the boy planted his small fields. He planted all the kinds of seeds that he had gathered from the forest.
+			<br>
+			<p>"No, no," the ghosts said, "On this farm we plant corn and wheat! Grains keep well and feed many. Those fruit seeds won't be ready come harvest time anyway, they grow much too slowly!"
+			<br>
+			<p>To placate the ghosts, the boy took a rusty shovel and uprooted some of the wild grains and moved them to his plot, steadily improving his technique as the spirits berated him. He slept peacefully again that night as well.
+			<br>
+			<p>The boy continued planting and clearing until a week later he had finished. The farm was still overgrown but his small garden, at least, was cleared. 
+			<br>
+			<p>And the boy continued to improve himself and the land as seasons passed. 
+			<br>
+			<p>He learned how the old family had dug their well and made a new one, it's water refreshing and cool. He learned how they had constructed the farm houses with timber from the woods and began to improve his shelter.
+			<br>
+			<p>And when there was nothing else he needed to do, he took out the diary he had found on that first day, and he drew. 
+			<br>
+			<p>He drew what he could of the fairies and the feast. He drew his hopes for the orchard that he would grow. He drew idle thoughts and fragments of dreams he had, whenever the ghosts didn't keep him awake. He drew his old town, not ruined by fire, but bustling with life.
+			<br>
+			<p>He drew the village, rich and beautiful, where everyone had enough. Free from fear of dragons or monsters or hunger, and could live fully, working for what truly mattered. Where the present and the future both were made for the living and not for the dead.
+			<br>
+			<p>And throughout, his plants had begun to grow. The berries' seeds began to grow bushes, and the fruits', saplings. They were still too young and would not feed him this year. But the grains the ghosts had made him plant, and the traps he had set himself, would tide him over till spring.</p>
+			<br>
+			<hr>
+			<br>
+			<p>A week before he began his harvest, the witch stormed out from the woods onto the farm.
+			<br>
+			<p>"The creatures tell me that you are still here, and that you are taking wood from the forest to rebuild this forsaken place!" she yelled, "You were to leave! But here I find you attempting to resurrect this blight!? The kingdom is dead, it's old ways gone, burned to ash! And it would be better for all if it stayed that way!"
+			<br>
+			<p>The ghosts rushed to defend the farm, or perhaps even the farmhand; he had been there long enough that they had started to recognize him; but the witch did not give them the chance. In her hand she conjured a flame like dragon's fire, and the ghosts fled before it.
+			<br>
+			<p>"How could you!? What foolish spirit has possessed you that you believed this a good idea?!" Then her eye's caught sight of the diary the boy still held, forgotten. 
+			<br>
+			<p>"How dare you!" she screamed.
+			<br>
+			<p>With a flick of her magic, she tore it from his hands and into her own. The book held her full attention as she flipped frantically from page to page, and her face changing from enraged to distraught. And then, as she collected herself, as she began to actually look at what was in front of her, she grew confused. 
+			<br>
+			<p>She came to the picture of the orchard. The place that she was standing; this place that she knew, but not the farm she knew it as. 
+			<br>
+			<p>She flipped back through, and saw the boy's dreams for the village which she helped through hard times.
+			<br>
+			<p>Finally, she saw the drawing of the fay king laughing jovially at something off in the distance. 
+			<br>
+			<p>At her, perhaps. It would have been just like him.
+			<br>
+			<p>The witch sighed, and closed the book, resigned to the king's machinations. And then, thinking about what else she had seen in the book, she began to chuckle as well.
+			<br>
+			<p>"I must apologize young man." The witch said, handing the boy back his book.
+			<br>
+			<p>"I didn't realize I was trespassing. But if you'll follow me I believe I can make it up to you. There's some plants and mushrooms you'll be wanting that should be planted near by. Practically living fertilizer. And the pigs escaped a while ago, I expect you'll be wanting them back. Oh and there's some bees that would be happy to help too, come next spring..." 
+			<br>
+			<p>And on and on she went, as incessantly as the ghosts had, but the boy had not been one to turn away wisdom when given.
+			<br>
+			<p>And so it was that the farmer and the witch worked together to build the new farm.
+			<br>
+			<br>
+			<br>
+		</div>
+		<div class="col-1 col-space"></div>
+	</div>
+	<script>
+		includeHTML();
+	</script> 
+</body>
+
