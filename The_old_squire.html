@@ -7,11 +7,6 @@
 <script> 
 	const pageName="squire"; 
 	const audioSource="The_old_squire.m4a";
-	function audioSetup(){
-		document.getElementById("source").src=audioSource;
-		const audio=document.getElementById("audio");
-		audio.load();
-		setTimeout(function(){document.getElementById("audio-length").innerHTML=calcTime(audio.duration);},300);	}
 </script>
 <script>
 const per0=new Map([
@@ -87,7 +82,7 @@ function bg_image_percent(percentThrough){
 <link rel="stylesheet" type="text/css" href="style.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body onload="setTimeout(audioSetup,10);">
+<body onload="setTimeout(audioSetup,0);">
 	<div w3-include-html="audio_player.html" ></div>
 	<div w3-include-html="header.html"></div>
 	<div id="old-squire" class="content story row" style="display:block;">

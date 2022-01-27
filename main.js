@@ -13,6 +13,13 @@ const calcTime = (secs) => {
   return `${minutes}:${returnedSeconds}`;
 }
 
+function audioSetup(){
+	document.getElementById("source").src=audioSource;
+	const audio=document.getElementById("audio");
+	audio.onloadeddata=()=>{document.getElementById("audio-length").innerHTML=calcTime(audio.duration)};
+	audio.load();
+}
+
 function interactiveMap(){
 	const todo=["metaphysics_pin","farmer_pin","litch_pin","morality_pin","ethics_pin","support_pin"];
 	const map=document.getElementById("map_svg").contentDocument;
