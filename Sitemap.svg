@@ -27,9 +27,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.979899"
-     inkscape:cx="308.19252"
-     inkscape:cy="138.22987"
+     inkscape:zoom="2.8"
+     inkscape:cx="397.02133"
+     inkscape:cy="169.68524"
      inkscape:document-units="mm"
      inkscape:current-layer="layer4"
      showgrid="false"
@@ -335,6 +335,19 @@
          stdDeviation="0.37749143"
          inkscape:collect="always" />
     </filter>
+    <filter
+       height="1.3688515"
+       y="-0.18442579"
+       width="1.3515633"
+       x="-0.17578165"
+       id="filter7467-0-3-97"
+       style="color-interpolation-filters:sRGB"
+       inkscape:collect="always">
+      <feGaussianBlur
+         id="feGaussianBlur7469-6-7-3"
+         stdDeviation="0.37749143"
+         inkscape:collect="always" />
+    </filter>
   </defs>
   <metadata
      id="metadata5">
@@ -405,7 +418,7 @@
      inkscape:label="geography"
      id="layer2"
      inkscape:groupmode="layer"
-     sodipodi:insensitive="true">
+     style="display:inline">
     <path
        sodipodi:nodetypes="ssssssssss"
        inkscape:connector-curvature="0"
@@ -1870,13 +1883,42 @@
        id="path11982-8"
        d="m 32.505951,194.37946 c 15.6417,5.20678 11.75027,28.97517 28.726193,30.61607"
        style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.50000001, 2.00000006;stroke-dashoffset:0;stroke-opacity:1" />
+    <g
+       id="g5119"
+       transform="translate(-2.3364196,0.4877765)">
+      <path
+         sodipodi:nodetypes="cccc"
+         inkscape:connector-curvature="0"
+         id="path4969"
+         d="m 128.675,208.15997 1.31965,-1.9043 1.27894,1.9043 c -0.8662,0.10435 -1.73239,0.16035 -2.59859,0 z"
+         style="fill:#f9f6f6;fill-opacity:1;stroke:#000000;stroke-width:0.26499999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         sodipodi:nodetypes="cc"
+         inkscape:connector-curvature="0"
+         id="path5064"
+         d="m 127.01435,211.88777 c 1.6839,-0.48251 3.0826,-0.66126 5.57515,-0.0236"
+         style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         sodipodi:nodetypes="cccccc"
+         inkscape:connector-curvature="0"
+         id="path5066"
+         d="m 129.01094,208.21153 c 0.14066,1.21935 0.0508,2.40027 0.0135,3.58996 0.65693,0.1522 1.14408,0.11712 1.77885,-0.0188 -0.13138,-1.19366 -0.11611,-2.38732 0.036,-3.58098 -0.59552,0.13917 -1.07411,0.14775 -1.82833,0.01 z"
+         style="fill:#f9f6f6;fill-opacity:1;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" />
+      <path
+         sodipodi:nodetypes="cc"
+         inkscape:connector-curvature="0"
+         id="path4975"
+         d="m 129.5068,209.26549 0.002,0.17399"
+         style="fill:none;stroke:#000000;stroke-width:0.26499999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </g>
   </g>
   <g
      transform="translate(-14.684553,-84.031154)"
      style="display:inline"
      inkscape:label="key"
      id="layer3"
-     inkscape:groupmode="layer">
+     inkscape:groupmode="layer"
+     sodipodi:insensitive="true">
     <rect
        inkscape:export-ydpi="96"
        inkscape:export-xdpi="96"
@@ -2192,11 +2234,12 @@
     </g>
   </g>
   <g
-     style="opacity:1"
+     style="display:inline;opacity:1"
      transform="translate(-14.684553,-84.031154)"
      inkscape:label="features"
      id="layer4"
-     inkscape:groupmode="layer">
+     inkscape:groupmode="layer"
+     sodipodi:insensitive="true">
     <path
        sodipodi:nodetypes="cc"
        inkscape:connector-curvature="0"
@@ -2312,12 +2355,12 @@
     </g>
     <text
        id="text9665"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05555534px;line-height:0.26458332px;font-family:'Jim Nightshade';-inkscape-font-specification:'Jim Nightshade, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332;opacity:0.7;"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05555534px;line-height:0.26458332px;font-family:'Jim Nightshade';-inkscape-font-specification:'Jim Nightshade, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:0.7;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
        xml:space="preserve"><textPath
          id="textPath9669"
          xlink:href="#path9667"><tspan
    id="tspan9663"
-   style="stroke-width:0.26458332;">P   h   i   l   o   s   o   p   h   y</tspan></textPath></text>
+   style="stroke-width:0.26458332">P   h   i   l   o   s   o   p   h   y</tspan></textPath></text>
     <g
        style="opacity:0.7"
        id="g5192">
@@ -2347,21 +2390,21 @@
        id="text9722"
        y="172.45683"
        x="96.194931"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05555534px;line-height:0.26458332px;font-family:'Jim Nightshade';-inkscape-font-specification:'Jim Nightshade, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332;opacity:0.7;"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05555534px;line-height:0.26458332px;font-family:'Jim Nightshade';-inkscape-font-specification:'Jim Nightshade, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:0.7;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
        xml:space="preserve"><tspan
-         style="font-size:7.05555534px;stroke-width:0.26458332;"
+         style="font-size:7.05555534px;stroke-width:0.26458332"
          y="172.45683"
          x="96.194931"
          id="tspan9720"
          sodipodi:role="line">M    e    t    a</tspan></text>
     <text
        id="text9726"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05555534px;line-height:0.26458332px;font-family:'Jim Nightshade';-inkscape-font-specification:'Jim Nightshade, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332;opacity:0.7;"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05555534px;line-height:0.26458332px;font-family:'Jim Nightshade';-inkscape-font-specification:'Jim Nightshade, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:0.7;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
        xml:space="preserve"><textPath
          id="textPath9730"
          xlink:href="#path9728"><tspan
    id="tspan9724"
-   style="font-size:7.05555534px;stroke-width:0.26458332;">I      n      v      e      n      t      i      o      n      s</tspan></textPath></text>
+   style="font-size:7.05555534px;stroke-width:0.26458332">I      n      v      e      n      t      i      o      n      s</tspan></textPath></text>
     <path
        sodipodi:nodetypes="cc"
        inkscape:connector-curvature="0"
@@ -2973,20 +3016,18 @@
        id="text5622-4-8-5-1"
        y="255.48587"
        x="175.14317"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888903px;line-height:0.26458332px;font-family:'Jim Nightshade';-inkscape-font-specification:'Jim Nightshade, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332;opacity:0.7;"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888903px;line-height:0.26458332px;font-family:'Jim Nightshade';-inkscape-font-specification:'Jim Nightshade, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;opacity:0.7;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
        xml:space="preserve"><tspan
-         style="font-size:4.93888903px;stroke-width:0.26458332;"
+         style="font-size:4.93888903px;stroke-width:0.26458332"
          y="255.48587"
          x="175.14317"
          id="tspan5620-8-7-8-3"
          sodipodi:role="line">Terra Iognita</tspan></text>
     <flowRoot
-       style="fill:black;fill-opacity:1;stroke:none;font-family:'Jim Nightshade';font-style:normal;font-weight:normal;line-height:1px;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:'Jim Nightshade, Normal';font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;font-size:13.33333333px"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.33333302px;line-height:1px;font-family:'Jim Nightshade';-inkscape-font-specification:'Jim Nightshade, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
        id="flowRoot5239"
        xml:space="preserve"><flowRegion
-         style=""
          id="flowRegion5241"><rect
-           style=""
            y="576.27795"
            x="387.76913"
            height="21.159691"
@@ -3077,7 +3118,7 @@
     <g
        id="support_star-7-04"
        class="star_pin"
-       style="opacity:1"
+       style="display:inline;opacity:1"
        inkscape:label="#g6387"
        transform="translate(-86.732214,-49.533511)">
       <path
@@ -3194,6 +3235,89 @@
       <circle
          style="opacity:1;vector-effect:none;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#282828;stroke-width:0.56;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
          id="path7199-3-8-9"
+         cx="139.93599"
+         cy="235.07269"
+         r="0.70870537" />
+    </g>
+    <g
+       transform="translate(-7.3800126,-28.147429)"
+       id="wizard_pin"
+       onclick="parent.location='The_wizard_girl.html'"
+       onmouseover="style.opacity=1"
+       onmouseout="style.opacity=.7"
+       inkscape:label="#g10912"
+       style="display:inline;opacity:0.7">
+      <rect
+         style="opacity:1;vector-effect:none;fill:#f9f6f6;fill-opacity:0.5744681;fill-rule:evenodd;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:0.50000001, 2.00000003;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect5223-4"
+         width="2.3623512"
+         height="2.2678571"
+         x="138.84973"
+         y="233.88126"
+         ry="1.1600683e-013" />
+      <g
+         transform="translate(53.198488,71.037125)"
+         inkscape:label="#g6387"
+         style="display:inline;opacity:0"
+         id="wizard_star"
+         class="star_pin">
+        <path
+           inkscape:transform-center-y="-1.0690788"
+           inkscape:transform-center-x="-0.29356756"
+           d="m 88.288693,166.31465 -1.597533,-0.71354 -1.587817,0.73491 0.18496,-1.73984 -1.18961,-1.283 1.711845,-0.36174 0.852598,-1.52785 0.873018,1.51628 1.716544,0.33873 -1.17229,1.29885 z"
+           inkscape:randomized="0"
+           inkscape:rounded="0"
+           inkscape:flatsided="false"
+           sodipodi:arg2="1.5640882"
+           sodipodi:arg1="0.93576962"
+           sodipodi:r2="1.4679292"
+           sodipodi:r1="2.7096815"
+           sodipodi:cy="164.13321"
+           sodipodi:cx="86.681313"
+           sodipodi:sides="5"
+           id="path7358-7-7-7-0"
+           style="display:inline;opacity:1;vector-effect:none;fill:#f9f6f6;fill-opacity:1;fill-rule:nonzero;stroke:#282828;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;filter:url(#filter7467-0-3-97)"
+           sodipodi:type="star" />
+        <path
+           inkscape:transform-center-y="-1.0690788"
+           inkscape:transform-center-x="-0.29356756"
+           d="m 88.288701,166.31465 -1.597534,-0.71354 -1.587816,0.73491 0.18496,-1.73984 -1.18961,-1.283 1.711845,-0.36174 0.852597,-1.52785 0.873019,1.51628 1.716543,0.33873 -1.17229,1.29885 z"
+           inkscape:randomized="0"
+           inkscape:rounded="0"
+           inkscape:flatsided="false"
+           sodipodi:arg2="1.5640882"
+           sodipodi:arg1="0.93576962"
+           sodipodi:r2="1.4679292"
+           sodipodi:r1="2.7096815"
+           sodipodi:cy="164.13321"
+           sodipodi:cx="86.68132"
+           sodipodi:sides="5"
+           id="path7358-6-7-29"
+           style="display:inline;opacity:1;vector-effect:none;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#282828;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           sodipodi:type="star" />
+      </g>
+      <rect
+         style="opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:0.66161613;fill-rule:evenodd;stroke:none;stroke-width:0.36225954;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect9837-3-0"
+         width="19.104683"
+         height="4.0244474"
+         x="130.2485"
+         y="229.78078"
+         ry="1.4708986e-013" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:0.26458332px;font-family:'Jim Nightshade';-inkscape-font-specification:'Jim Nightshade, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         x="130.46843"
+         y="233.11818"
+         id="text5622-4-8-52-2-74"><tspan
+           sodipodi:role="line"
+           x="130.46843"
+           y="233.11818"
+           style="font-size:3.52777767px;stroke-width:0.26458332"
+           id="tspan9812-0-6">The Wizard Girl</tspan></text>
+      <circle
+         style="opacity:1;vector-effect:none;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#282828;stroke-width:0.56;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="path7199-3-8-4"
          cx="139.93599"
          cy="235.07269"
          r="0.70870537" />
