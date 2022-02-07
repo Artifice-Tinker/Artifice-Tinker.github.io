@@ -8,6 +8,20 @@ margin:0;
 *{
 	box-sizing: border-box;
 }
+.full-background-img{
+	position:fixed;
+	max-width:50%;
+	left:50%;
+	width:100%;
+	top:120px;
+	max-height:75%;
+	z-index:-1;
+	opacity:0.7;
+}
+.full-spacer{
+	padding-bottom:80%;
+}
+
 .background-img{
 	width: 25%;
 	position: fixed;
@@ -44,6 +58,14 @@ background-color: #f9f6f6;
 	  left:25%;
 	  opacity:.4;
 	  top:15%
+  }
+  .full-background-img{
+	  left:0;
+	  max-width:100%;
+	  max-height:75%;
+  }
+  .full-spacer{
+	  padding-bottom:120%;
   }
   /*.header{
 	  background-color: #f3f0f0;
