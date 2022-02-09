@@ -9,68 +9,164 @@
 	const audioSource="The_wizard_girl.m4a";
 </script>
 <script>
-const per0=new Map([
-	["layer4",0],
-	["layer5",0],
-	["layer6",0]
-	]);
-const per27=null;
-const per45=new Map([
-	["layer4",1],
-	["layer5",0],
-	["layer6",0]
-	]);
-const per71=null;
-const per90=new Map([
-	["layer4",.25],
-	["layer5",0],
-	["layer6",.75]
-	]);
-const per98=null;
-const per100=new Map([
-	["layer4",.5],
-	["layer5",1],
-	["layer6",.25]
-	]);
-const presets=new Map([
-//tower
-//class+tower
-//class+tower2
-//cage+birb
-//cage+birb+power
-//cage+birb
-//tower2
-//cage+dragon
-//
-//end
+	const fr0=new Map([//tower
+		["end",0],
+		["class",0],
+		["tower",1],
+		["cage",0],
+		["tower 2",0]
+		]);
+	const fr1=null;//tower->class+tower
+	const fr2=new Map([//class+tower
+		["end",0],
+		["class",1],
+		["tower",1],
+		["cage",0],
+		["tower 2",0]
+		]);
+	const fr3=null;//class+tower->-tower
+	const fr4=new Map([//class
+		["end",0],
+		["class",1],
+		["tower",0],
+		["cage",0],
+		["tower 2",0]
+		]);
+	const fr5=null;//class->cage+birb
+	const fr6=new Map([//cage+birb
+		["end",0],
+		["class",0],
+		["tower",0],
+		["cage",1],
+		["birb",1],
+		["power",0],
+		["dragon",0],
+		["tower 2",0]
+		]);
+	const fr7=null;//cage+birb->+power
+	const fr8=new Map([//cage+birb+power
+		["end",0],
+		["class",0],
+		["tower",0],
+		["cage",1],
+		["birb",1],
+		["power",1],
+		["dragon",0],
+		["tower 2",0]
+		]);
+	const fr8_1=null;//cage+birb+power->-.5power
+	const fr8_2=new Map([//cage+birb+.5power
+		["end",0],
+		["class",0],
+		["tower",0],
+		["cage",1],
+		["birb",1],
+		["power",.5],
+		["dragon",0],
+		["tower 2",0]
+	])
+	const fr9=null;//cage+birb+power-> -power
+	const fr10=new Map([//cage+birb
+		["end",0],
+		["class",0],
+		["tower",0],
+		["cage",1],
+		["birb",1],
+		["power",0],
+		["dragon",0],
+		["tower 2",0]
+		]);
+	const fr11=null;//cage+birb->tower2
+	const fr12=new Map([//tower2
+		["end",0],
+		["class",0],
+		["tower",0],
+		["cage",0],
+		["birb",0],
+		["power",0],
+		["dragon",0],
+		["tower 2",1]
+		]);
+	const fr13=null;//tower2->cage+dragon
+	const fr14=new Map([//cage+dragon
+		["end",0],
+		["class",0],
+		["tower",0],
+		["cage",1],
+		["birb",0],
+		["power",0],
+		["dragon",1],
+		["tower 2",0]
+		]);
+	const fr15=null;//cage+dragon->_
+	const fr16=new Map([//_
+		["end",0],
+		["class",0],
+		["tower",0],
+		["cage",0],
+		["birb",0],
+		["power",0],
+		["dragon",0],
+		["tower 2",0]
+		]);
+	const fr17=null;//_->end
+	const fr18=new Map([//end
+		["end",1],
+		["class",0],
+		["tower",0],
+		["cage",0],
+		["tower 2",0]
+		]);
 
+	const presets=new Map([
+		[0,fr0],//tower
+		[13,fr1],//tower->class+tower
+		[15,fr2],//class+tower
+		[20,fr3],//class+tower->-tower
+		[22,fr4],//class
+		[29,fr5],//class->cage+birb
+		[33,fr6],//cage+birb
+		[40,fr7],//cage+birb->+power
+		[42,fr8],//cage+birb+power
+		[47.5,fr8_1],//cage+birb+power->-.5power
+		[48.5,fr8_2],//cage+birb+.5power
+		[50,fr9],//cage+birb+.5power-> -power
+		[56,fr10],//cage+birb
+		[57,fr11],//cage+birb->tower2
+		[60,fr12],//tower2
+		[68,fr13],//tower2->cage+dragon
+		[74,fr14],//cage+dragon
+		[80,fr15],//cage+dragon->_
+		[82,fr16],//_
+		[99,fr17],//_->end
+		[100,fr18]//end
+		]);
+		
+	var playing=false;
 
-	[0,per0], //tower
-	[27,per27],//class+tower
-	[45,per45],//class+tower2
-	[71,per71],//cage+birb
-	[90,per90],//
-	[98,per98],//
-	[100,per100]
-	]);
+	function imgSetup(){
+		window.onscroll = function() {
+			if(playing)return;
+			bg_image_percent(document.documentElement.scrollTop/(document.documentElement.scrollHeight-document.documentElement.clientHeight));
+		};
+	}
 	
-var playing=false;
-
-window.onscroll = function() {
-	if(playing)return;
-	bg_image_percent(document.documentElement.scrollTop/(document.documentElement.scrollHeight-document.documentElement.clientHeight));
-};
-
-function bg_image_percent(percentThrough){
-	const svg=document.getElementById("wizard_svg").contentDocument;
-	changeSvg(svg,percentThrough*100,presets);
-}
+	function setup(){
+		audioSetup();
+		imgSetup();
+		bg_image_percent(document.documentElement.scrollTop/(document.documentElement.scrollHeight-document.documentElement.clientHeight));
+	}
+	
+	function bg_image_percent(percentThrough){
+		const svg=document.getElementById("wizard_svg").contentDocument;
+		changeSvg(svg,percentThrough*100,presets);
+	}
 </script>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=Jim+Nightshade&display=swap" rel="stylesheet"> 
 <link rel="stylesheet" type="text/css" href="style.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body onload="setTimeout(audioSetup,0);">
+<body onload="setTimeout(setup,0);">
 	<div w3-include-html="audio_player.html" ></div>
 	<div w3-include-html="header.html"></div>
 	<div id="wizard_girl" class="content story row" style="display:block;">
