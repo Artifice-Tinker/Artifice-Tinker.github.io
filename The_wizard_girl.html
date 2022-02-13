@@ -154,10 +154,12 @@
 	function setup(){
 		audioSetup();
 		imgSetup();
+		var test=document.documentElement.scrollHeight-document.documentElement.clientHeight;
 		bg_image_percent(document.documentElement.scrollTop/(document.documentElement.scrollHeight-document.documentElement.clientHeight));
 	}
 	
 	function bg_image_percent(percentThrough){
+		if(isNaN(percentThrough)) percentThrough=document.documentElement.scrollTop/(document.documentElement.scrollHeight-document.documentElement.clientHeight);
 		const svg=document.getElementById("wizard_svg").contentDocument;
 		changeSvg(svg,percentThrough*100,presets);
 	}
