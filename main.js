@@ -76,7 +76,7 @@ function changeSvg(svgID, percent, presets){
 
 }
 
-function includeHTML() {
+function includeHTML(){
   var z, i, elmnt, file, xhttp;
   /* Loop through a collection of all HTML elements: */
   z = document.getElementsByTagName("*");
@@ -103,3 +103,65 @@ function includeHTML() {
     }
   }
 }
+
+function bionicTxt(){//takes string of text, conserves tags and adds <b> and </b> tags to first 40% of each word
+		var txt=document.getElementById("maintext").innerHTML;
+		function splt(str,chr){
+			const tmp=str.split(chr);
+			var out = []
+			function asdf(item){
+				out.push(item);out.push(chr);
+			}
+			tmp.forEach(asdf);
+			out.pop();
+			return out;
+		}
+		var arry=splt(txt,"<");
+		function arrySplt(arry,chr){
+			var out=[];
+			asdf= (item)=>out.push(item);
+			asdf2= (item)=>splt(item,chr).forEach(asdf);
+			arry.forEach(asdf2);
+			return out;
+		}
+		arry=arrySplt(arry,">");
+		arry=arrySplt(arry," ");
+		arry=arrySplt(arry,"-");
+		arry=arrySplt(arry,".");
+		arry=arrySplt(arry,",");
+		arry=arrySplt(arry,";");
+		arry=arrySplt(arry,":");
+		arry=arrySplt(arry,"?");
+		arry=arrySplt(arry,"!");
+		arry=arrySplt(arry,"(");
+		arry=arrySplt(arry,")");
+		arry=arrySplt(arry,"\"");
+		arry=arrySplt(arry,"“");
+		function arryBold(arry){
+			var tag=false;
+			function check(item,index,arr){
+				if (tag){
+					tag=!/>/.test(item);
+				}else{
+					if(/</.test(item)){//check start tag
+						tag=true;return;
+					}
+					if(/\W/.test(item)) return;//ignore white,hyphen
+					const splt= Math.ceil(item.length*.2);//replace item w/ bolded
+					arr[index]="<b>"+item.substr(0,splt)+"</b>"+item.substr(splt);
+				}
+			}
+			arry.forEach(check);
+		}
+		arryBold(arry);
+		function concatArry(arry){
+			out="";
+			for(var i=0;i<arry.length;i++){
+				out+=arry[i];
+			}
+			return out;
+		}
+		var out=concatArry(arry);
+		document.getElementById("maintext").innerHTML=out;
+}
+
