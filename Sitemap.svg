@@ -27,9 +27,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.5636009"
-     inkscape:cx="198.20179"
-     inkscape:cy="498.73402"
+     inkscape:zoom="0.98254477"
+     inkscape:cx="323.35316"
+     inkscape:cy="341.99656"
      inkscape:document-units="mm"
      inkscape:current-layer="layer4"
      showgrid="false"
@@ -3061,11 +3061,11 @@
            width="23.362967"
            id="rect5243" /></flowRegion><flowPara
          id="flowPara5245" /></flowRoot>    <g
-       id="support_pin"
+       id="contact_pin"
        style="opacity:0.7"
        onmouseover="style.opacity=1"
        onmouseout="style.opacity=.7"
-       onclick="const stars=document.getElementsByClassName(&quot;star_pin&quot;); for(var i=0;i&lt;stars.length;i++)stars[i].style.opacity=0;  document.getElementById(&quot;support_star&quot;).style.opacity=1; top.closeMap();"
+       onclick="parent.location='contact.html'"
        inkscape:label="#g10494">
       <rect
          style="opacity:0.48999999;vector-effect:none;fill:#f9f6f6;fill-opacity:0.5744681;fill-rule:evenodd;stroke:none;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:0.50000001, 2.00000003;stroke-dashoffset:0;stroke-opacity:1"
@@ -3079,7 +3079,7 @@
          transform="translate(0.81748523,0.42210337)"
          inkscape:label="#g6387"
          style="display:inline;opacity:0"
-         id="support_star"
+         id="contact_star"
          class="star_pin">
         <path
            inkscape:transform-center-y="-1.0690788"
@@ -3134,7 +3134,7 @@
            x="83.180984"
            y="162.08269"
            style="font-size:3.52777767px;stroke-width:0.26458332"
-           id="tspan9812-0-4-7">Support</tspan></text>
+           id="tspan9812-0-4-7">Contact</tspan></text>
       <circle
          style="opacity:1;vector-effect:none;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#282828;stroke-width:0.56;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
          id="path7199-3-8-1-9"

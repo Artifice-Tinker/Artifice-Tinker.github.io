@@ -133,7 +133,11 @@ input[type=range]::-moz-range-thumb {
   cursor: pointer;
 }
 
-
+.card{
+	position:relative;
+	left:20%;
+	line-height:20%;
+}
 
 .audio-player{
 position: fixed;

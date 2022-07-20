@@ -21,7 +21,7 @@ function audioSetup(){
 }
 
 function interactiveMap(){
-	const todo=["metaphysics_pin","farmer_pin","litch_pin","morality_pin","ethics_pin","support_pin"];
+	const todo=["metaphysics_pin","farmer_pin","litch_pin","morality_pin","ethics_pin"];
 	const map=document.getElementById("map_svg").contentDocument;
 	for(var i=0;i<todo.length;i++){
 		map.getElementById(todo[i]).onmouseover="";
