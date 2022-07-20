@@ -28,10 +28,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.98254477"
-     inkscape:cx="323.35316"
-     inkscape:cy="341.99656"
+     inkscape:cx="378.52756"
+     inkscape:cy="341.75896"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer4"
+     inkscape:current-layer="layer3"
      showgrid="false"
      inkscape:window-width="1855"
      inkscape:window-height="1057"
@@ -1931,8 +1931,7 @@
      style="display:inline"
      inkscape:label="key"
      id="layer3"
-     inkscape:groupmode="layer"
-     sodipodi:insensitive="true">
+     inkscape:groupmode="layer">
     <rect
        inkscape:export-ydpi="96"
        inkscape:export-xdpi="96"
@@ -1989,7 +1988,7 @@
            style="font-size:10.58333302px;stroke-width:0.26458332">Artifice Tinkering</tspan></text>
     </g>
     <g
-       id="g5108">
+       id="g6905">
       <rect
          style="opacity:1;vector-effect:none;fill:#fdfbfb;fill-opacity:1;fill-rule:nonzero;stroke:#282828;stroke-width:0.3078444;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
          id="rect4541"
@@ -2012,16 +2011,16 @@
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:0.26458332px;font-family:'Jim Nightshade';-inkscape-font-specification:'Jim Nightshade, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;opacity:0.7;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-         x="18.735554"
+         x="33.667458"
          y="95.98156"
          id="text4537"><tspan
            sodipodi:role="line"
            id="tspan4535"
-           x="18.735554"
+           x="33.667458"
            y="95.98156"
-           style="stroke-width:0.26458332">Artifice Tinkering</tspan><tspan
+           style="stroke-width:0.26458332">Site Map</tspan><tspan
            sodipodi:role="line"
-           x="18.735554"
+           x="33.667458"
            y="96.24614"
            style="stroke-width:0.26458332"
            id="tspan4539" /></text>
