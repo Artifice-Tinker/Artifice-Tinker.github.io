@@ -165,3 +165,10 @@ function bionicTxt(){//takes string of text, conserves tags and adds <b> and </b
 		document.getElementById("maintext").innerHTML=out;
 }
 
+function footNote(mouse, tag){//when a footnote is moused over, put the relevent text in a box over the footnote. 
+	document.getElementById("footcontent").innerHTML=document.getElementById(tag).innerHTML;
+	const footnote=document.getElementById("footnote");
+	footnote.style.left=event.clientX-10+"px";
+	footnote.style.top=event.clientY-20+"px";
+	footnote.style.display="block"
+}
