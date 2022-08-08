@@ -3600,7 +3600,7 @@
     <g
        transform="translate(8.4413247,-22.187593)"
        id="abstract_pin"
-       onclick="parent.location='abstract_realism.html'"
+       onclick="parent.location='Abstract_realism.html'"
        onmouseover="style.opacity=1"
        onmouseout="style.opacity=.7"
        inkscape:label="#g10856"
@@ -3684,7 +3684,7 @@
     <g
        transform="translate(-1.8251889,-15.255038)"
        id="mythic_pin"
-       onclick="parent.location='mythic_thinking.html'"
+       onclick="parent.location='Mythic_thinking.html'"
        onmouseover="style.opacity=1"
        onmouseout="style.opacity=.7"
        inkscape:label="#g10856"
@@ -3767,7 +3767,7 @@
     </g>
     <g
        transform="translate(5.1316286,-39.52981)"
-       id="freewill_pin"
+       id="free_will_pin"
        onclick="parent.location='Free_will.html'"
        onmouseover="style.opacity=1"
        onmouseout="style.opacity=.7"
@@ -3786,7 +3786,7 @@
          transform="translate(-24.202545,71.161449)"
          inkscape:label="#g6387"
          style="display:inline;opacity:0"
-         id="freewill_star"
+         id="free_will_star"
          class="star_pin">
         <path
            inkscape:transform-center-y="-1.0690788"
@@ -3852,7 +3852,7 @@
     <g
        transform="translate(24.26779,-27.520202)"
        id="gods_pin"
-       onclick="parent.location='gods.html'"
+       onclick="parent.location='Gods.html'"
        onmouseover="style.opacity=1"
        onmouseout="style.opacity=.7"
        inkscape:label="#g10856"
