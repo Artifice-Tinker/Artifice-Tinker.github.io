@@ -21,6 +21,4 @@ $RECYCLE.BIN/
 # =========================
 # Operating System Files
 # =========================
-drawing-1.svg
-farm(raw).svg
-farm.png
+ignore/*
